@@ -13,7 +13,8 @@ Building
 
 The resulting PDF files are included for easy viewing, but it is recommended to
 build the two parts with `latexrun` as follows
-```bash
-latexrun msca-pf-part-b1.tex
-latexrun msca-pf-part-b2.tex
-```
+
+.. code:: bash
+
+    latexrun msca-pf-part-b1.tex
+    latexrun msca-pf-part-b2.tex

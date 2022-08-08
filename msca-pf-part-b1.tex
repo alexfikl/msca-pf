@@ -1,0 +1,341 @@
+\documentclass[11pt,draftproposal]{msca-pf-2022}
+% {{{ packages
+
+% math
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{stmaryrd}
+\usepackage{mathrsfs}
+\usepackage{cases}
+
+% pretty links
+\usepackage{xparse}
+\usepackage[hypertexnames=false,breaklinks=true]{hyperref}
+\usepackage[nameinlink, noabbrev]{cleveref}
+\usepackage[round]{natbib}
+\hypersetup{
+    colorlinks=true,
+    urlcolor=blue,
+    citecolor=black,
+    linkcolor=black
+}
+
+% better environments
+\usepackage[shortlabels]{enumitem}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{subcaption}
+
+% better typography
+\usepackage[activate={true,nocompatibility}, % activate protrusion and font expansion
+            final,              % enable microtype, use draft to disable
+            tracking=true,
+            kerning=true,       % optimise interactions between characters
+            spacing=true,       % more uniform spacing between words
+            factor=1100,        % more protrusion
+            stretch=10,         % smaller values (default 20, 20) to avoid blurring
+            shrink=10]{microtype}
+\SetTracking{encoding={*}, shape=sc}{40}
+
+% }}}
+
+% {{{ formatting
+
+% caption format
+% NOTE: set format=plain to remove caption indentation
+\captionsetup{
+    format=hang
+}
+
+% }}}
+
+% {{{ title
+
+\title{Part B-1}
+\author{}
+\date{}
+
+% }}}
+
+\begin{document}
+
+\maketitle
+
+\section{Excellence}
+
+\subsection{Quality and pertinence of the project's research and innovation objectives}
+
+At a minimum, address the following aspects:
+
+\begin{itemize}
+    \item Describe the quality and pertinence of the R \& I objectives; are the
+    objectives measurable and verifiable? Are they realistically achievable?
+
+    \item Describe how your project goes beyond the state-of-the-art, and the
+    extent to which the proposed work is ambitious.
+\end{itemize}
+
+\subsection{Soundness of the proposed methodology}
+
+At a minimum, address the following aspects:
+
+\begin{itemize}
+    \item \emph{Overall methodology}: Describe and explain the overall methodology,
+    including the concepts, models and assumptions that underpin your work.
+    Explain how this will enable you to deliver your project’s objectives. Refer
+    to any important challenges you may have identified in the chosen methodology
+    and how you intend to overcome them.
+
+    \item \emph{Integration of methods and disciplines to pursue the objectives}:
+    Explain how expertise and methods from different disciplines will be brought
+    together and integrated in pursuit of your objectives. If you consider that
+    an inter-disciplinary\footnotemark{} approach is unnecessary in the
+    context of the proposed work, please provide a justification.
+
+    \footnotetext{Interdisciplinarity means the integration of information, data,
+    techniques, tools, perspectives, concepts or theories from two or more
+    scientific disciplines.}
+
+    \item \emph{Gender dimension and other diversity aspects}: Describe how the
+    gender dimension and other diversity aspects are taken into account in the
+    project's research and innovation content. If you do not consider such a
+    gender dimension to be relevant in your project, please provide a
+    justification.
+    \begin{itemize}
+        \item Remember that that this question relates to the content of the
+        planned research and innovation activities, and not to gender balance
+        in the teams in charge of carrying out the project.
+
+        \item  Sex, gender and diversity analysis refers to biological
+        characteristics and social/cultural factors respectively. For guidance on
+        methods of sex / gender analysis and the issues to be taken into account,
+        please refer to
+        \href{https://ec.europa.eu/info/news/gendered-innovations-2-2020-nov-24_en}{this page}.
+    \end{itemize}
+
+    \item \emph{Open science practices}: Describe how appropriate open science
+    practices are implemented as an integral part of the proposed methodology.
+    Show how the choice of practices and their implementation is adapted to the
+    nature of your work in a way that will increase the chances of the project
+    delivering on its objectives [e.g. up to 1/2 page, including research data
+    management]. If you believe that none of these practices are appropriate for
+    your project, please provide a justification here.
+
+    \item \emph{Open science is an approach based on open cooperative work and systematic
+    sharing of knowledge and tools as early and widely as possible in the process.
+    Open science practices include early and open sharing of research (for example
+    through pre-registration, registered reports, pre-prints, or crowd-sourcing);
+    research output management; measures to ensure reproducibility of research
+    outputs; providing open access to research outputs (such as publications,
+    data, software, models, algorithms, and workflows); participation in open
+    peer-review; and involving all relevant knowledge actors including citizens,
+    civil society and end users in the co-creation of R\&I agendas and contents
+    (such as citizen science).}
+
+    \item \emph{Please note that this does not refer to outreach actions that may be
+    planned as part of the communication, dissemination and exploitation activities.
+    These aspects should instead be described below under ``Impact''.}
+
+    \item \emph{Research data management and management of other research outputs}:
+    Applicants generating/collecting data and/or other research outputs (except for
+    publications) during the project must explain how the data will be managed
+    in line with the FAIR principles (Findable, Accessible, Interoperable,
+    Reusable).
+
+    \item \emph{For guidance on open science practices and research data management,
+    please refer to the relevant section of the \href{https://ec.europa.eu/info/funding-tenders/opportunities/docs/2021-2027/horizon/guidance/programme-guide_horizon_en.pdf}{HE Programme Guide}
+    on the Funding \& Tenders Portal.}
+\end{itemize}
+
+\subsection{Quality of the supervision, training and of the two-way transfer of
+knowledge between the researcher and the host}
+
+At a minimum, address the following aspects:
+
+\begin{itemize}
+    \item Describe the qualifications and experience of the supervisor(s).
+    Provide information regarding the supervisors' level of experience on the
+    research topic proposed and their track record of work, including main
+    international collaborations, as well as the level of experience in
+    supervising/training, especially at advanced level (i.e. PhD and postdoctoral
+    researchers).
+
+    \item Planned training activities for the researcher (scientific aspects,
+    management/organisation, horizontal and key transferrable skills...).
+
+    \item For \emph{European Fellowships}: two-way transfer of knowledge between
+    the researcher and host organisation.
+
+    \item For \emph{Global Fellowships}: three-way transfer of knowledge between
+    the researcher, host organisation, and associated partner for outgoing phase.
+
+    \item Rationale and added-value of the non-academic placement (if applicable).
+\end{itemize}
+
+Employers and/or founders should ensure that a person is clearly identified to
+whom researchers can refer for the performance of their professional duties, and
+should inform the researchers accordingly.
+
+Such arrangements should clearly define that the proposed supervisors are
+sufficiently expert in supervising research, have the time, knowledge, experience,
+expertise and commitment to be able to offer the postdoctoral researcher
+appropriate support and provide for the necessary progress and review procedures,
+as well as the necessary feedback mechanisms.
+
+\textbf{Supervision} is one of the crucial elements of successful research. Guiding,
+supporting, directing, advising and mentoring are key factors for a researcher
+to pursue his/her career path. In this context, all MSCA-funded projects are
+encouraged to follow the recommendations outlined in the
+\href{https://data.europa.eu/doi/10.2766/508311}{MSCA Guidelines on Supervision}\footnotemark{}.
+
+\footnotetext{While the MSCA Guidelines on Supervision are non-binding,
+funded-projects are strongly encouraged to take them into account.}
+
+\subsection{Quality and appropriateness of the researcher's professional
+experience, competences and skills}
+
+Discuss the quality and appropriateness of the researcher’s existing professional
+experience in relation to the proposed research project.
+
+\section{Impact}
+
+\subsection{Credibility of the measures to enhance the career perspectives
+and employability of the researcher and contribution to his/her skills
+development}
+
+At a minimum, address the following aspects:
+
+\begin{itemize}
+    \item \emph{Expected} skill development of the researcher.
+    \item \emph{Expected} impact of the proposed research and training activities on
+    the researcher's career perspectives inside and/or outside academia.
+\end{itemize}
+
+\subsection{Suitability and quality of the measures to maximise expected
+outcomes and impacts, as set out in the dissemination and exploitation plan,
+including communication activities}
+
+At a minimum, address the following aspects:
+
+\begin{itemize}
+    \item \emph{Plan for the dissemination and exploitation activities, including
+    communication activities}\footnotemark{}: Describe the planned measures to
+    maximize the impact of your project by providing a first version of your ‘plan
+    for the dissemination and exploitation including communication activities’.
+    Describe the dissemination, exploitation measures that are planned, and the target
+    group(s) addressed (e.g. scientific community, end users, financial actors,
+    public at large). Regarding communication measures and public engagement
+    strategy, the aim is to inform and reach out to society and show the activities
+    performed, and the use and the benefits the project will have for citizens.
+    Activities must be strategically planned, with clear objectives, start at the
+    outset and continue through the lifetime of the project. The description of
+    the communication activities needs to state the main messages as well as the
+    tools and channels that will be used to reach out to each of the chosen target
+    groups.
+
+    \footnotetext{In case your proposal is selected for funding, a more detailed
+    Dissemination and Exploitation plan will need to be provided as a mandatory
+    project deliverable during project implementation.}
+
+    \item \emph{Strategy for the management of intellectual property, foreseen
+    protection measures}: if relevant, discuss the strategy for the management
+    of intellectual property, foreseen protection measures, such as patents,
+    design rights, copyright, trade secrets, etc., and how these would be used
+    to support exploitation.
+
+    \item All measures should be proportionate to the scale of the project, and
+    should contain concrete actions to be implemented both during and after the
+    end of the project.
+\end{itemize}
+
+\subsection{The magnitude and importance of the project’s contribution to the
+expected scientific, societal and economic impacts}
+
+\begin{itemize}
+    \item Provide a narrative explaining how the project’s results are expected
+    to make a difference in terms of impact, beyond the immediate scope and
+    duration of the project. The narrative should include the components below,
+    tailored to your project.
+
+    \item Be specific, referring to the effects of your project, and not R\&I
+    in general in this field. State the target groups that would benefit.
+
+    \begin{itemize}
+        \item \emph{Expected scientific impact(s)}: e.g. contributing to specific
+        scientific advances, across and within disciplines, creating new knowledge,
+        reinforcing scientific equipment and instruments, computing systems (i.e.
+        research infrastructures);
+
+        \item \emph{Expected economic/technological impact(s)}: e.g. bringing new
+        products, services, business processes to the market, increasing efficiency,
+        decreasing costs, increasing profits, contributing to standards’ setting,
+        etc.
+
+        \item \emph{Expected societal impact(s)}: e.g. decreasing CO2 emissions,
+        decreasing avoidable mortality, improving policies and decision-making,
+        raising consumer awareness.
+    \end{itemize}
+
+    \item Only include such outcomes and impacts where your project would make
+    a significant and direct contribution. Avoid describing very tenuous links
+    to wider impacts.
+
+    \item Give an indication of the magnitude and importance of the project's
+    contribution to the expected outcomes and impacts, should the project be
+    successful. Provide quantified estimates where possible and meaningful.
+    ``Magnitude'' refers to how widespread the outcomes and impacts are likely
+    to be. For example, in terms of the size of the target group, or the
+    proportion of that group, that should benefit over time; ``Importance''
+    refers to the value of those benefits. For example, number of additional
+    healthy life years; efficiency savings in energy supply.
+\end{itemize}
+
+\section{Quality and Efficiency of the Implementation}
+
+\subsection{Quality and effectiveness of the work plan, assessment of risks and
+appropriateness of the effort assigned to work packages}
+
+At a minimum, address the following aspects:
+
+\begin{itemize}
+    \item Brief presentation of the overall structure of the work plan,
+    including deliverables and milestones.
+
+    \item Timing of the different work packages and their components;
+
+    \item Mechanisms in place to assess and mitigate risks (of research and/or
+    administrative nature).
+\end{itemize}
+
+A Gantt chart must be included and should indicate the proposed Work Packages
+(WP), major deliverables, milestones, secondments, placements. This Gantt chart
+counts towards the 10-page limit. The schedule in the Gantt chart should indicate
+the number of months elapsed from the start of the action (Month 1).
+
+\subsection{Quality and capacity of the host institutions and participating
+organisations, including hosting arrangements}
+
+At a minimum, address the following aspects:
+
+\begin{itemize}
+    \item Hosting arrangements, including integration in the team/institution
+    and support services available to the researcher.
+
+    \item Quality and capacity of the participating organisations, including
+    infrastructure, logistics and facilities should be outlined in Part B-2
+    Section 5 (``Capacity of the Participating Organisations'').
+\end{itemize}
+
+Note that for GF, both the quality and capacity of the outgoing Third Country
+host and the return host should be outlined.
+
+\subsection*{Associated partners linked to a beneficiary\footnotemark{}}
+
+If applicable, outline here the involvement of any 'associated partners linked
+to a beneficiary' (in particular, the name of the entity, the type of link with
+the beneficiary and the tasks to be carried out).
+
+\footnotetext{See the definitions section of the MSCA Work Programme for
+further information.}
+
+\end{document}

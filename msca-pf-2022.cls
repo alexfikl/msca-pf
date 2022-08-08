@@ -57,6 +57,9 @@
 % required font is Times Roman (or Nimbus Roman on Linux)
 \RequirePackage{mathptmx}
 
+% build fancy table required for organization description
+\RequirePackage{array}
+\RequirePackage[table]{xcolor}
 % customize page numbering
 \RequirePackage{lastpage}
 % customize headers and footers
@@ -146,6 +149,20 @@
 \end{center}
 }
 \makeatother
+
+% >>>
+
+% <<< table
+
+\newenvironment{msctable}[2][\footnotesize]{
+\begin{center}
+#1 % Set the right size (and font maybe)
+\newcommand{\ra}{\raggedright\arraybackslash}
+\begin{tabular}{#2}
+}{%
+\end{tabular}
+\end{center}
+}
 
 % >>>
 

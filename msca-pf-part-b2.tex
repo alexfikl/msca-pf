@@ -1,0 +1,300 @@
+\documentclass[11pt,draftproposal]{msca-pf-2022}
+% {{{ packages
+
+% math
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{stmaryrd}
+\usepackage{mathrsfs}
+\usepackage{cases}
+
+% pretty links
+\usepackage{xparse}
+\usepackage[hypertexnames=false,breaklinks=true]{hyperref}
+\usepackage[nameinlink, noabbrev]{cleveref}
+\usepackage[round]{natbib}
+\hypersetup{
+    colorlinks=true,
+    urlcolor=blue,
+    citecolor=black,
+    linkcolor=black
+}
+
+% better environments
+\usepackage[shortlabels]{enumitem}
+% \usepackage{booktabs}
+\usepackage{caption}
+\usepackage{subcaption}
+
+% better typography
+\usepackage[activate={true,nocompatibility}, % activate protrusion and font expansion
+            final,              % enable microtype, use draft to disable
+            tracking=true,
+            kerning=true,       % optimise interactions between characters
+            spacing=true,       % more uniform spacing between words
+            factor=1100,        % more protrusion
+            stretch=10,         % smaller values (default 20, 20) to avoid blurring
+            shrink=10]{microtype}
+\SetTracking{encoding={*}, shape=sc}{40}
+
+% }}}
+
+% {{{ formatting
+
+% caption format
+% NOTE: set format=plain to remove caption indentation
+\captionsetup{
+    format=hang
+}
+
+% }}}
+
+% {{{ title
+
+\title{Part B-2}
+\author{}
+\date{}
+
+% }}}
+
+\begin{document}
+
+\maketitle
+
+\section{CV of the researcher (indicative length: 5 pages)}
+
+Any information provided in Parts A and B of the proposal should be fully consistent.
+Always mention full dates (using format: dd/mm/yyyy). The CV should include the
+standard academic and research record. Any research career gaps and/or unconventional
+paths should be clearly explained.
+
+At a minimum, the CV should contain:
+
+\begin{enumerate}[a)]
+    \item The name of the researcher;
+    \item Professional experience (most recent first, with exact dates in format
+    dd/mm/yyyy);
+    \item Education, including PhD award date (most recent first, with exact
+    dates in format: dd/mm/yyyy).
+\end{enumerate}
+
+The CV should include information on:
+
+\begin{itemize}
+    \item Publications in peer-reviewed scientific journals, peer-reviewed conference
+    proceedings,  and/or monographs (they are expected to be open access either
+    published or through repositories) and other outputs such as data, software,
+    algorithms significant for your research path (they are expected to be open
+    access in appropriate repositories to the extent possible; they should be
+    accompanied by a very short qualitative assessment of their scientific
+    significance and not by the Journal Impact Factor);
+
+    \item Invited presentations to internationally established conferences and/or
+    international advanced schools;
+
+    \item Organisation of international conferences, including membership in
+    the steering and/or programme committee;
+
+    \item Research expeditions led by the researcher;
+
+    \item Granted patent(s);
+
+    \item Examples of participation in industrial innovation;
+
+    \item Prizes and Awards;
+
+    \item Funding received so far;
+
+    \item Supervising and mentoring activities;
+
+    \item Other items of interest.
+\end{itemize}
+
+Applicants who have successfully defended their doctoral thesis before the call
+deadline but who have not yet formally been awarded the doctoral degree must
+clearly indicate the date of the successful PhD defence (``viva''). Researchers
+having their last thesis defence after the call deadline will be automatically
+declared ineligible for this call.
+
+\section{Capacity of the Participating Organisation(s)}
+
+Please provide an overview list of all participating organisations (the
+beneficiary and, where applicable, all associated partners) using template
+table 5.1 below, and more detailed information for each of the participating
+organisations (using a separate table for each organisation) using template
+table 5.2 below.
+
+Any inter-relationship between the participating organisation(s) or individuals
+and other entities/persons appearing (e.g. family ties, shared premises or
+facilities, joint ownership, financial interest, overlapping staff or directors,
+etc.) must be declared in the proposal.
+
+Applicants should provide additional information regarding the administrative/legal
+relations between the department carrying out the work as described in the table
+below, and the entity/entities mentioned in Part A of the proposal (i.e. linked
+to the given Participant Identification Code – PIC).
+
+Should the proposal be shortlisted for funding, all participating organisations
+will have to be registered with the European Commission’s
+\href{https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/how-to-participate/participant-register}{Participant Register Services}. Therefore where
+this information is \href{https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/how-to-participate/participant-register-search}{already known},
+please provide in Table 5.1 the (draft or validated) nine digit \emph{Participant
+Identification Code} (PIC) for the beneficiary and, where applicable, each
+associated partner.
+
+\subsection{Template table: Overview of Participating Organisations}
+
+\begin{msctable}{
+    |>{\ra}p{0.15\linewidth}
+    |>{\ra}p{0.075\linewidth}
+    |>{\ra}p{0.15\linewidth}
+    |>{\ra}p{0.15\linewidth}
+    |>{\ra}p{0.15\linewidth}
+    |>{\ra}p{0.15\linewidth}
+    |>{\ra}p{0.15\linewidth}|}
+\hline
+\rowcolor{gray!40}
+\textbf{Organization Role} &
+\textbf{PIC} &
+\textbf{Legal Entity Short Name} &
+\textbf{Academic Orgnization (Y/N)} &
+\textbf{Country} &
+\textbf{Name of Supervisor} \\
+\hline
+Beneficiary &
+&
+&
+&
+& \\
+\hline
+Associated partner linked to a beneficiary (if applicable) &
+&
+&
+&
+& \\
+\hline
+Associated partner for outgoing phase (mandatory for GF) &
+&
+&
+&
+& \\
+\hline
+Associated partner for secondment (optional) &
+&
+&
+&
+& \\
+\hline
+Associated partner for non-academic placement (optional) &
+&
+&
+&
+& \\
+\hline
+Other &
+&
+&
+&
+& \\
+\hline
+\end{msctable}
+
+\subsection{Template table: Capacity of the Participating Organisations}
+
+Please complete a separate table for each participating organisation. For the
+beneficiary, this table should be maximum 1 page in length; for each associated
+partner, the table should be maximum ½ page in length. Choose one of
+
+\begin{itemize}
+    \item Beneficiary (compulsory).
+    \item Associated partner linked to a beneficiary (if applicable)
+    \item Associated partner for outgoing phase (compulsory for GF only)
+    \item Associated partner for secondment (optional)
+    \item Associated partner for non-academic placement (optional)
+\end{itemize}
+
+\begin{msctable}{
+    |>{\ra}p{0.5\linewidth}
+    |>{\ra}p{0.5\linewidth}|}
+\hline
+\multicolumn{2}{|l|}{
+    \textbf{[Full name + Legal Entity Short Name + Country]}
+} \\
+\hline
+\multicolumn{2}{|l|}{
+    \textbf{General description}
+} \\
+\hline
+\textbf{Role and profile of supervisor} & \\
+\hline
+\textbf{Key research facilities, infrastructure and equipment} &
+Demonstrate that the beneficiary has sufficient facilities and infrastructure to host and/or offer a suitable environment for training and transfer of knowledge to the recruited experienced researcher.
+
+If applicable, indicate the name of the associated partner linked to a beneficiary and describe the nature of the link in the corresponding table. \\
+\hline
+\textbf{Previous and current involvement in EU-funded research and training
+programmes/actions/projects} &
+Indicate up to 5 relevant EU, national or international research and training
+actions/projects in which the institution/department has previously participated
+and/or is currently participating. \\
+\hline
+\end{msctable}
+
+\section{Additional ethics information}
+
+Additional information that could not be included in Part A of the proposal (if needed).
+
+\section{Additional information on security screening}
+
+Additional information on security aspects that could not be included in Part
+A of the proposal (if needed).
+
+\section{Letter(s) of commitment from as
+    sociated partners (only for hosts of
+    outgoing phase of Global Fellowships or non-academic placement)}
+
+Use this section to add scanned copies of the letter(s) of commitment, if applicable.
+
+Minimum requirements:
+
+\begin{itemize}
+    \item With heading or stamp from the institution;
+    \item Up-to-date document, i.e. not dated prior to the call publication;
+    \item Demonstrating the will to actively participate in the (identified) proposal;
+    \item Explanation of the precise role.
+\end{itemize}
+
+Any additional information the organisation deems useful can be added in the letter.
+
+Note that the expert evaluators will be instructed to disregard the contribution
+of any associated partners for which no such evidence of commitment is submitted.
+
+In case the letter fails to provide enough information on the associated partner's
+role and/or enough assurance of their commitment in the project (e.g. no signature,
+wrong proposal references, outdated letter…), the experts may penalise the
+proposal on these aspects under the implementation evaluation criterion.
+
+For GF proposals, and for all proposals requesting a non-academic placement,
+\emph{the absence of a letter of commitment will render the proposal inadmissible
+and the proposal will not be evaluated}.
+
+\subsection*{Non-binding example of template letter of commitment for PF associated partners}
+
+I undersigned \emph{[title, first name and surname]}, in my quality of
+\emph{[role in the organisation]} in \emph{[name of the organisation]} commit
+to set up all necessary provisions to participate as associated partner in the
+proposal \emph{[proposal number and/or acronym]} submitted to the call
+HE-MSCA-PF-2022, should the proposal be funded.
+
+On behalf of \emph{[name of the organisation]}, I also confirm that we will
+participate and contribute to the research, innovation and training activities
+as planned in this project. In particular, \emph{[name of the organisation]}
+will be involved in \emph{[free field for any additional information that the
+participating organisation wishes to indicate in order to describe its role and
+contribution to the project]}.
+
+I hereby declare that I am entitled to commit into this process the entity I represent.
+
+\hfill \emph{Name, Date, Signature}
+
+\end{document}

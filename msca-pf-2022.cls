@@ -81,6 +81,10 @@
     % customize PDF bookmarks a bit
     \RequirePackage{bookmark}
     \bookmarksetup{numbered}
+
+    \if@draftproposal
+        \linenumbers
+    \fi
 }
 
 % >>>
@@ -94,9 +98,6 @@
     \renewcommand{\linenumberfont}{
         \normalfont\footnotesize\textcolor{black!50}
     }
-
-    \let\thesis@mainmatter=\mainmatter
-    \def\mainmatter{\linenumbers\thesis@mainmatter}
 
     % The \linenumbers command does not play nice with amsmath, so we
     % have added some patches to fix it. See

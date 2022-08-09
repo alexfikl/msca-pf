@@ -2,7 +2,9 @@ MSCA-PF: LaTeX Template
 -----------------------
 
 LaTeX class and template for Marie Skłodowska-Curie Actions Postdoctoral Fellow
-grant applications.
+grant applications. This is currently geared towards the templates from the
+2022 call, but contributions for updates to future requirements are more than
+welcome!
 
 * Details and original template is provided `here <https://rea.ec.europa.eu/funding-and-grants/horizon-europe-marie-sklodowska-curie-actions/horizon-europe-msca-how-apply_en#postdoctoral-fellowships--call-2022>`__.
 

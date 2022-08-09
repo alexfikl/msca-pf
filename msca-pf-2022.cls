@@ -167,6 +167,18 @@
 
 % >>>
 
+% <<< cv
+
+\newcommand{\cvline}[4]{
+\begin{tabular}{@{}p{0.2\textwidth}@{}p{0.05\textwidth}@{}p{0.65\textwidth}}
+    \raggedleft \textbf{#1} &
+    &
+    \textbf{#2}, \emph{#3}, #4.
+\end{tabular}
+}
+
+% >>>
+
 \recalctypearea
 
 \endinput

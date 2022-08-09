@@ -20,3 +20,36 @@ build the two parts with `latexrun` as follows
 
     latexrun msca-pf-part-b1.tex
     latexrun msca-pf-part-b2.tex
+
+Functionality
+-------------
+
+This packages provides the ``msca-pf-2022`` class that is based on the
+KOMA-script ``scrartcl`` class and accepts any options meant for it. It can
+be used as
+
+.. code:: latex
+
+    \documentclass[11pt,layoutgrid,draftproposal]{msca-pf-2022}
+
+    % ... preamble ...
+
+    \begin{document}
+
+    % ... content ...
+
+    \end{document}
+
+The class has two options meant for drafting:
+
+* ``layoutgrid``: overlays a grid on top of each page to check margins and
+  other alignment issues.
+* ``draftproposal``: adds helpful drafting options, such as line numbers and
+  a time stamp.
+
+It also provides a few useful commands that can be used in the proposal:
+
+* ``msctable``: a wrapper around ``tabular`` that can be used in the exact
+  same way, but imposes a consistent font size and formatting for tables.
+* ``cvline``: used as ``\cvline{dates}{main}{details}{location}`` to add a
+  simple line to the required CV.

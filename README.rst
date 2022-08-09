@@ -20,8 +20,8 @@ build the two parts with `latexrun` as follows
 
 .. code:: bash
 
-    latexrun msca-pf-part-b1.tex
-    latexrun msca-pf-part-b2.tex
+    latexrun msca-pf-part-b1-template.tex
+    latexrun msca-pf-part-b2-template.tex
 
 Functionality
 -------------
@@ -53,5 +53,9 @@ It also provides a few useful commands that can be used in the proposal:
 
 * ``msctable``: a wrapper around ``tabular`` that can be used in the exact
   same way, but imposes a consistent font size and formatting for tables.
-* ``cvline``: used as ``\cvline{dates}{main}{details}{location}`` to add a
+* ``cvitem``: used as ``\cvline{dates}{main}{details}{location}`` to add a
   simple line to the required CV.
+* ``cvdetail``: used as ``\cvdetail{name}{description}`` to add properly
+  aligned comments to entries.
+* ``cvpub``: used as ``\cvpub{date}{authors}{title}{journal}`` to add a
+  publication.

@@ -169,13 +169,19 @@
 
 % <<< cv
 
-\newcommand{\cvline}[4]{
-\begin{tabular}{@{}p{0.2\textwidth}@{}p{0.05\textwidth}@{}p{0.65\textwidth}}
+\newcommand{\cvline}[2]{
+\begin{tabular}{@{}p{0.15\textwidth}@{}p{0.05\textwidth}@{}p{0.75\textwidth}}
     \raggedleft \textbf{#1} &
     &
-    \textbf{#2}, \emph{#3}, #4.
+    #2.
 \end{tabular}
 }
+
+\newcommand{\cvitem}[4]{\cvline{#1}{\textbf{#2}, \emph{#3}, #4}}
+
+\newcommand{\cvdetail}[2]{\cvline{}{\textbf{#1}: #2}}
+
+\newcommand{\cvpub}[4]{\cvline{#1}{#2, \emph{#3}, #4}}
 
 % >>>
 

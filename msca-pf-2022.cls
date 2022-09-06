@@ -38,6 +38,11 @@
     parskip=half*,
 }
 
+% tighted sections a bit for more space
+\RedeclareSectionCommand[beforeskip=0.5em, afterskip=0.5em]{section}
+\RedeclareSectionCommand[beforeskip=0.5em, afterskip=0.5em]{subsection}
+\RedeclareSectionCommand[beforeskip=0.25em, afterskip=0.25em]{subsubsection}
+
 \if@draftproposal
     \newcount\timehh\newcount\timemm
     \timehh=\time \divide\timehh by 60
@@ -144,9 +149,9 @@
 \def\@maketitle{
 \begin{center}
     \normalfont \normalsize
-    \vspace{0.2cm}
-    {\huge \bfseries \@title \par}
     \vspace{0.3cm}
+    {\huge \bfseries \@title \par}
+    \vspace{-0.2cm}
 \end{center}
 }
 \makeatother

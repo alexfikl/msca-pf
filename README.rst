@@ -53,6 +53,8 @@ It also provides a few useful commands that can be used in the proposal:
 
 * ``msctable``: a wrapper around ``tabular`` that can be used in the exact
   same way, but imposes a consistent font size and formatting for tables.
+* ``msclongtable``: a wrapper around ``longtable`` similar to ``msctable``
+  (allows tables across multiple pages).
 * ``cvitem``: used as ``\cvline{dates}{main}{details}{location}`` to add a
   simple line to the required CV.
 * ``cvdetail``: used as ``\cvdetail{name}{description}`` to add properly

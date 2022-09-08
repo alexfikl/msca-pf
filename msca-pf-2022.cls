@@ -191,6 +191,7 @@
     &
     #2.
 \end{tabular}
+\vspace{-3pt}
 }
 
 \newcommand{\cvitem}[4]{\cvline{#1}{\textbf{#2}, \emph{#3}, #4}}

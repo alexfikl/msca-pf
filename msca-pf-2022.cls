@@ -5,7 +5,7 @@
 \def\clsname{msca-pf-2022}
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{\clsname}[\filedate\ \fileversion\ MSCA PF Proposal]
+\ProvidesClass{\clsname}[\filedate\ \fileversion\ MSCA Proposal]
 
 % >>>
 
@@ -133,10 +133,16 @@
 
 % <<< page header/footer styles
 
+\newcommand{\mscaidentifier}[1]{\def\@mscaidentifier{#1}}
+\newcommand{\mscaproject}[1]{\def\@mscaproject{#1}}
+
+\def\@mscaidentifier{HORIZON-MSCA-2022-PF-01}
+\def\@mscaproject{TBD}
+
 \pagestyle{plain}
 \clearpairofpagestyles
 
-\def\callheader{\small \textsc{HORIZON-MSCA-2022-PF-01} -- MSCA Postdoctoral Fellowships 2022}
+\def\callheader{Call: \small \textsc{\@mscaidentifier} -- \@mscaproject}
 \def\pagefooter{Part B -- Page \thepage\, of\, \pageref{LastPage}}
 
 \cfoot[\pagefooter]{\pagefooter}

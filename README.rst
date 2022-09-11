@@ -51,6 +51,8 @@ The class has two options meant for drafting:
 
 It also provides a few useful commands that can be used in the proposal:
 
+* ``mscaidentifier``: the call identifier, e.g. ``HORIZON-MSCA-2022-PF-01``.
+* ``mscaproject``: the acronym for the project.
 * ``msctable``: a wrapper around ``tabular`` that can be used in the exact
   same way, but imposes a consistent font size and formatting for tables.
 * ``msclongtable``: a wrapper around ``longtable`` similar to ``msctable``

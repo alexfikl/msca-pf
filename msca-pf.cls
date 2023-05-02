@@ -1,8 +1,8 @@
 % <<< preamble
 
-\def\fileversion{v1.0}
-\def\filedate{2022/08/08}
-\def\clsname{msca-pf-2022}
+\def\fileversion{v1.1}
+\def\filedate{2023/05/02}
+\def\clsname{msca-pf}
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{\clsname}[\filedate\ \fileversion\ MSCA Proposal]
@@ -136,7 +136,7 @@
 \newcommand{\mscaidentifier}[1]{\def\@mscaidentifier{#1}}
 \newcommand{\mscaproject}[1]{\def\@mscaproject{#1}}
 
-\def\@mscaidentifier{HORIZON-MSCA-2022-PF-01}
+\def\@mscaidentifier{HORIZON-MSCA-2023-PF-01}
 \def\@mscaproject{TBD}
 
 \pagestyle{plain}

@@ -26,13 +26,13 @@ build the two parts with `latexrun` as follows
 Functionality
 -------------
 
-This packages provides the ``msca-pf-2022`` class that is based on the
+This packages provides the ``msca-pf`` class that is based on the
 KOMA-script ``scrartcl`` class and accepts any options meant for it. It can
 be used as
 
 .. code:: latex
 
-    \documentclass[11pt,layoutgrid,draftproposal]{msca-pf-2022}
+    \documentclass[11pt,layoutgrid,draftproposal]{msca-pf}
 
     % ... preamble ...
 

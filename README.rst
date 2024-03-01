@@ -12,6 +12,10 @@ welcome!
 
 * For a similar template for the Doctoral Network see `msca-dn <https://github.com/pgarner/msca-dn>`__.
 
+**Caution**: Only the 2022 template was submitted and deemed eligible by the
+Horizon program. Newer versions simply updated based on the official template.
+Reporting any discrepancies is highly appreciated!
+
 Building
 --------
 

@@ -1,6 +1,6 @@
 TEXMK?=latexmk
 OUTDIR?=latex.out
-TEXFLAGS?=-pdflua -output-directory=$(OUTDIR)
+TEXFLAGS?=-pdf -output-directory=$(OUTDIR)
 PDFFILES=\
 	msca-pf-part-b1-template.pdf \
 	msca-pf-part-b2-template.pdf

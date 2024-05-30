@@ -1,5 +1,6 @@
-TEXMK?=latexrun
-TEXFLAGS?=--latex-cmd pdflatex -O latex.out
+TEXMK?=latexmk
+OUTDIR?=latex.out
+TEXFLAGS?=-pdflua -output-directory=$(OUTDIR)
 PDFFILES=\
 	msca-pf-part-b1-template.pdf \
 	msca-pf-part-b2-template.pdf
@@ -16,7 +17,7 @@ template: $(PDFFILES)				## Compile template example
 .PHONY: template
 
 clean:								## Remove temporary compilation files
-	rm -rf latex.out
+	rm -rf $(OUTDIR)
 .PHONY: clean
 
 purge: clean						## Remove all generated files
@@ -25,3 +26,4 @@ purge: clean						## Remove all generated files
 
 %.pdf: %.tex
 	PYTHONWARNINGS=ignore $(TEXMK) $(TEXFLAGS) $<
+	cp $(OUTDIR)/$@ .

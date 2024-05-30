@@ -59,6 +59,9 @@
 
 % NOTE: load packages after the class was loaded since they may depend on it
 
+\RequirePackage{xparse}
+\RequirePackage[hypertexnames=false,breaklinks=true]{hyperref}
+
 % required font is Times Roman (or Nimbus Roman on Linux)
 \RequirePackage{mathptmx}
 
@@ -66,12 +69,13 @@
 \RequirePackage{array}
 \RequirePackage[table]{xcolor}
 \RequirePackage{longtable}
-% customize page numbering
-\RequirePackage{lastpage}
 % customize headers and footers
 \RequirePackage{scrlayer-scrpage}
 % indent first paragraph in a section
 \RequirePackage{indentfirst}
+
+% customize page numbering
+\RequirePackage{lastpage}
 
 % enable this to better check sizing
 \if@layoutgrid
@@ -93,6 +97,14 @@
     \fi
 }
 
+% make links a bit less intrusive
+\hypersetup{
+    colorlinks=true,
+    urlcolor=blue,
+    citecolor=black,
+    linkcolor=black
+}
+
 % >>>
 
 % <<< main matter
@@ -103,29 +115,6 @@
     \RequirePackage{xcolor}
     \renewcommand{\linenumberfont}{
         \normalfont\footnotesize\textcolor{black!50}
-    }
-
-    % The \linenumbers command does not play nice with amsmath, so we
-    % have added some patches to fix it. See
-    % http://phaseportrait.blogspot.com/2007/08/lineno-and-amsmath-compatibility.html
-    \newcommand*{\patchAmsMathEnvironmentForLineno}[1]{%
-        \expandafter\let\csname old#1\expandafter\endcsname\csname #1\endcsname
-        \expandafter\let\csname oldend#1\expandafter\endcsname\csname end#1\endcsname
-        \renewenvironment{#1}%
-            {\linenomath\csname old#1\endcsname}%
-            {\csname oldend#1\endcsname\endlinenomath}}%
-
-    \newcommand*{\patchBothAmsMathEnvironmentsForLineno}[1]{%
-        \patchAmsMathEnvironmentForLineno{#1}%
-        \patchAmsMathEnvironmentForLineno{#1*}}%
-
-    \AtBeginDocument{%
-        \patchBothAmsMathEnvironmentsForLineno{equation}%
-        \patchBothAmsMathEnvironmentsForLineno{align}%
-        \patchBothAmsMathEnvironmentsForLineno{flalign}%
-        \patchBothAmsMathEnvironmentsForLineno{alignat}%
-        \patchBothAmsMathEnvironmentsForLineno{gather}%
-        \patchBothAmsMathEnvironmentsForLineno{multline}%
     }
 \fi
 

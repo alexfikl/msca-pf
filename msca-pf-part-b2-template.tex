@@ -1,28 +1,10 @@
 \documentclass[11pt,draftproposal]{msca-pf}
 % {{{ packages
 
-% math
-\usepackage{amsmath}
-\usepackage{amsthm}
-\usepackage{stmaryrd}
-\usepackage{mathrsfs}
-\usepackage{cases}
-
-% pretty links
-\usepackage{xparse}
-\usepackage[hypertexnames=false,breaklinks=true]{hyperref}
-\usepackage[nameinlink, noabbrev]{cleveref}
-\usepackage[round]{natbib}
-\hypersetup{
-    colorlinks=true,
-    urlcolor=blue,
-    citecolor=black,
-    linkcolor=black
-}
-
 % better environments
+\usepackage[nameinlink, noabbrev]{cleveref}
 \usepackage[shortlabels]{enumitem}
-% \usepackage{booktabs}
+\usepackage{booktabs}
 \usepackage{caption}
 \usepackage{subcaption}
 
@@ -30,8 +12,6 @@
 \usepackage[activate={true,nocompatibility}, % activate protrusion and font expansion
             final,              % enable microtype, use draft to disable
             tracking=true,
-            kerning=true,       % optimise interactions between characters
-            spacing=true,       % more uniform spacing between words
             factor=1100,        % more protrusion
             stretch=10,         % smaller values (default 20, 20) to avoid blurring
             shrink=10]{microtype}
@@ -40,12 +20,6 @@
 % }}}
 
 % {{{ formatting
-
-% caption format
-% NOTE: set format=plain to remove caption indentation
-\captionsetup{
-    format=hang
-}
 
 % NOTE: this needs to be kept so that the sections match the template!
 \setcounter{section}{3}

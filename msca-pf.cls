@@ -48,7 +48,7 @@
     \timehh=\time \divide\timehh by 60
     \timemm=\time \count255=\timehh \multiply\count255 by -60
         \advance\timemm by \count255
-    \def\draftheader{\small \slshape Draft of \today}
+    \def\draftheader{\small \textit{Draft of \today}}
 \else
     \def\draftheader{\empty}
 \fi
@@ -59,23 +59,33 @@
 
 % NOTE: load packages after the class was loaded since they may depend on it
 
+\RequirePackage{iftex}
 \RequirePackage{xparse}
 \RequirePackage[hypertexnames=false,breaklinks=true]{hyperref}
 
-% required font is Times Roman (or Nimbus Roman on Linux)
-\RequirePackage{mathptmx}
+% required font is Times New Roman (or Nimbus Roman on Linux)
+\ifpdftex
+    \RequirePackage[T1]{fontenc}
+    \RequirePackage{mathptmx}
+\else
+    \RequirePackage{fontspec}
+    \IfFontExistsTF{Times New Roman}{
+        \setmainfont[Ligatures=Rare]{Times New Roman}}{
+        \IfFontExistsTF{Nimbus Roman}{
+            \setmainfont{Nimbus Roman}
+        }{\PackageWarning{msca-pf}{No Times New Roman font could be found}}}
+\fi
 
 % build fancy table required for organization description
 \RequirePackage{array}
 \RequirePackage[table]{xcolor}
 \RequirePackage{longtable}
+% customize page numbering
+\RequirePackage{lastpage}
 % customize headers and footers
 \RequirePackage{scrlayer-scrpage}
 % indent first paragraph in a section
 \RequirePackage{indentfirst}
-
-% customize page numbering
-\RequirePackage{lastpage}
 
 % enable this to better check sizing
 \if@layoutgrid
@@ -131,8 +141,8 @@
 \pagestyle{plain}
 \clearpairofpagestyles
 
-\def\callheader{Call: \small \textsc{\@mscaidentifier} -- \@mscaproject}
-\def\pagefooter{Part B -- Page \thepage\, of\, \pageref{LastPage}}
+\def\callheader{\textnormal{Call: \small \@mscaidentifier -- \@mscaproject}}
+\def\pagefooter{\textnormal{Part B -- Page \thepage\, of\, \pageref{LastPage}}}
 
 \cfoot[\pagefooter]{\pagefooter}
 \ohead[\draftheader]{\draftheader}

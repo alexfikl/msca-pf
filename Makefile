@@ -1,6 +1,6 @@
 TEXMK?=latexmk
 OUTDIR?=latex.out
-TEXFLAGS?=-pdf -output-directory=$(OUTDIR)
+TEXFLAGS?=-pdflua -output-directory=$(OUTDIR)
 PDFFILES=\
 	msca-pf-part-b1-template.pdf \
 	msca-pf-part-b2-template.pdf
@@ -24,6 +24,6 @@ purge: clean						## Remove all generated files
 	rm -rf $(PDFFILES)
 .PHONY: purge
 
-%.pdf: %.tex
+%.pdf: %.tex msca-pf.cls
 	PYTHONWARNINGS=ignore $(TEXMK) $(TEXFLAGS) $<
 	cp $(OUTDIR)/$@ .

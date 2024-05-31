@@ -29,14 +29,15 @@ uses the ``mathptmx`` font. When using XeLaTeX or LuaLaTeX, we try to load
 the Times New Roman font and, if it is not available, the Nimbus Roman font.
 
 If these do not work for you, you can load fonts yourself using e.g.
-```tex
-% on PDFLaTeX
-\usepackage{newtxtext}
-\usepackage{newtxmath}
 
-% on XeLaTeX / LuaLaTeX
-\setmainfont{Times New Roman}
-```
+.. code:: tex
+
+    % on PDFLaTeX
+    \usepackage{newtxtext}
+    \usepackage{newtxmath}
+
+    % on XeLaTeX / LuaLaTeX
+    \setmainfont{Times New Roman}
 
 Building
 --------

@@ -2,22 +2,21 @@ MSCA-PF: LaTeX Template
 -----------------------
 
 LaTeX class and template for Marie Skłodowska-Curie Actions Postdoctoral Fellow
-grant applications. This is currently geared towards the templates from the
-2022 call, but contributions for updates to future requirements are more than
-welcome!
+grant applications.
 
 * Details and original template is provided
   `here <https://rea.ec.europa.eu/funding-and-grants/horizon-europe-marie-sklodowska-curie-actions/horizon-europe-msca-how-apply_en>`__
   (calls are updated each year).
 
 * For a ``docx`` version of the template, you must start the submission process.
-  The template will then be available on the right-hand side in a section
+  The template will then be available on the left-hand side in a section
   named "Download Part B templates".
 
-* For a similar template for the Doctoral Network see `msca-dn <https://github.com/pgarner/msca-dn>`__.
+* For a similar template for the Doctoral Network see
+  `msca-dn <https://github.com/pgarner/msca-dn>`__.
 
 **Caution**: Only the 2022 template was submitted and deemed eligible by the
-Horizon program. Newer versions simply updated based on the official template.
+Horizon program. Newer versions are simply updated based on the official template.
 Reporting any discrepancies is highly appreciated!
 
 Fonts

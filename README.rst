@@ -116,7 +116,7 @@ The CV commands can be used in the following fashion:
     \cvdetail{Description}{Job description in short}
     \end{cvitem}
 
-    # example of a bare entry (same as above without the details)
+    % example of a bare entry (same as above without the details)
     \cventryitem{DD/MM/YYYY DD/MM/YYYY}{Job Title}{Company / University}{Location}
 
     % example for a publication
@@ -127,7 +127,7 @@ The CV commands can be used in the following fashion:
     \cvdetail{URL}{DOI or arXiV URL}
     \end{cvitem}
 
-    # example for a bare publication (same as above without the details)
+    % example for a bare publication (same as above without the details)
     \cvpubitem{DD/MM/YYYY}{John Doe, Jane Doe}{Title of the Paper}
                           {Journal Name, Vo. XX, pp. XX-XX}
 

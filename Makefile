@@ -15,7 +15,7 @@ template: $(PDFFILES)				## Compile template example
 .PHONY: template
 
 typos:								## Check for typos
-	typos --sort
+	typos --sort --files --config typos.toml
 	@echo -e "\e[1;32mtypos clean!\e[0m"
 
 clean:								## Remove temporary compilation files

@@ -211,7 +211,7 @@
 
 \definecolor{MSCATagGray}{RGB}{180, 180, 180}
 \NewDocumentCommand \mscatag { m } {\textcolor{MSCATagGray}{\small \#@#1@\#}}
-\NewDocumentCommand \mscatagend { m } {\noindent \textcolor{MSCATagGray}{\#§#1§\#}}
+\NewDocumentCommand \mscatagend { m } {\noindent \textcolor{MSCATagGray}{\small \#§#1§\#}}
 
 % >>>
 

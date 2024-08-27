@@ -94,9 +94,11 @@ little tables in the submission:
 * ``cvitem``: an environment to define a nicely aligned CV item.
 * ``\cventry{dates}{name}{details}{location}``: a generic entry in the CV. Use
   ``\cventryitem`` to get one already wrapped in the ``cvitem`` environment.
-* ``\cvdetail{name}{description}``: a additional description for an entry.
 * ``\cvpub{date}{authors}{title}{journal}``: a publication. Use
   ``\cvpubitem`` to get one already wrapped in the ``cvitem`` environment.
+* ``\cvdetail{name}{description}``: a additional description for an entry. This
+  must be added in the same ``cvitem`` environment as the entry itself to use the
+  same alignment.
 
 The CV commands can be used in the following fashion:
 
@@ -113,6 +115,9 @@ The CV commands can be used in the following fashion:
     \cventry{DD/MM/YYYY DD/MM/YYYY}{Job Title}{Company / University}{Location}
     \cvdetail{Description}{Job description in short}
     \end{cvitem}
+
+    # example of a bare entry (same as above without the details)
+    \cventryitem{DD/MM/YYYY DD/MM/YYYY}{Job Title}{Company / University}{Location}
 
     % example for a publication
     \begin{cvitem}

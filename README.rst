@@ -8,8 +8,8 @@ grant applications.
   `here <https://rea.ec.europa.eu/funding-and-grants/horizon-europe-marie-sklodowska-curie-actions/horizon-europe-msca-how-apply_en>`__
   (calls are updated each year).
 
-* For a ``docx`` version of the template, you must start the submission process.
-  The template will then be available on the left-hand side in a section
+* For the official editable version of the template, you must start the submission
+  process. The template will then be available on the left-hand side in a section
   named "Download Part B templates".
 
 * For a similar template for the Doctoral Network see

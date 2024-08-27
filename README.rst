@@ -92,9 +92,11 @@ little tables in the submission:
   the table template from Section 5.2 for participating organisations. This is a
   fixed 2 column table.
 * ``cvitem``: an environment to define a nicely aligned CV item.
-* ``\cventry{dates}{name}{details}{location}``: a generic entry in the CV.
+* ``\cventry{dates}{name}{details}{location}``: a generic entry in the CV. Use
+  ``\cventryitem`` to get one already wrapped in the ``cvitem`` environment.
 * ``\cvdetail{name}{description}``: a additional description for an entry.
-* ``\cvpub{date}{authors}{title}{journal}``: a publication.
+* ``\cvpub{date}{authors}{title}{journal}``: a publication. Use
+  ``\cvpubitem`` to get one already wrapped in the ``cvitem`` environment.
 
 The CV commands can be used in the following fashion:
 
@@ -114,10 +116,15 @@ The CV commands can be used in the following fashion:
 
     % example for a publication
     \begin{cvitem}
-    \cvpub{DD/MM/YYYY}{John Doe, Jane Doe}{Title of Paper}{Journal Name, Vol. XX, pp. XX--XX}
+    \cvpub{DD/MM/YYYY}{John Doe, Jane Doe}{Title of the Paper}
+                      {Journal Name, Vol. XX, pp. XX--XX}
     \cvdetail{Description}{Main findings of the paper}
     \cvdetail{URL}{DOI or arXiV URL}
     \end{cvitem}
+
+    # example for a bare publication (same as above without the details)
+    \cvpubitem{DD/MM/YYYY}{John Doe, Jane Doe}{Title of the Paper}
+                          {Journal Name, Vo. XX, pp. XX-XX}
 
 A Gantt chart must also be provided in the proposal. There are some LaTeX packages,
 e.g. `pgfgantt <https://ctan.org/pkg/pgfgantt?lang=en>`__, that can be used to

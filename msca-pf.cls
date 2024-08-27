@@ -240,6 +240,18 @@
 % NOTE: \cvpub{date}{authors}{title}{journal etc}
 \NewDocumentCommand \cvpub { m m m m } {\raggedleft \textbf{#1} & #2, \emph{#3}, #4. \\}
 
+\NewDocumentCommand \cvpubitem { m m m m } {%
+\begin{cvitem}
+\cvpub{#1}{#2}{#3}{#4}
+\end{cvitem}
+}
+
+\NewDocumentCommand \cventryitem { m m m m } {%
+\begin{cvitem}
+\cventry{#1}{#2}{#3}{#4}
+\end{cvitem}
+}
+
 % >>>
 
 % <<< other

@@ -26,11 +26,22 @@
 
 % }}}
 
+% {{{ commands
+
+\NewDocumentCommand \ra {} {\raggedright\arraybackslash}
+
+
+% }}}
+
 % {{{ title
 
 \title{Part B-2}
 \author{}
 \date{}
+
+% NOTE: update these as necessary
+% \mscaidentifier{HORIZON-MSCA-2024-PF-01}
+% \mscaproject{TDB}
 
 % }}}
 
@@ -100,6 +111,35 @@ clearly indicate the date of the successful PhD defence (``viva''). Researchers
 having their last thesis defence after the call deadline will be automatically
 declared ineligible for this call.
 
+\subsection{Template CV}
+
+This template is only added to showcase the commands used to create the CV. As
+stated above, there is no mandatory format and these commands are mainly added
+as inspiration.
+
+\subsubsection*{Education}
+
+\begin{cvitem}
+\cventry{DD/MM/YYYY DD/MM/YYYY}{Ph.D. in Aerospace Engineering}{University Name}{Location}
+\cvdetail{Title}{Title of my Ph.D}
+\cvdetail{Advisor}{John Doe}
+\end{cvitem}
+
+\subsubsection*{Work Experience}
+
+\begin{cvitem}
+\cventry{DD/MM/YYYY DD/MM/YYYY}{Job Title}{Company / University}{Location}
+\cvdetail{Description}{Job description in short}
+\end{cvitem}
+
+\subsubsection*{Publications}
+
+\begin{cvitem}
+\cvpub{DD/MM/YYYY}{John Doe, Jane Doe}{Title of Paper}{Journal Name, Vol. XX, pp. XX--XX}
+\cvdetail{Description}{Main findings of the paper}
+\cvdetail{URL}{DOI or arXiV URL}
+\end{cvitem}
+
 \section{Capacity of the Participating Organisation(s)}
 
 Please provide an overview list of all participating organisations (the
@@ -129,23 +169,9 @@ associated partner.
 \subsection{Template table: Overview of Participating Organisations}
 \label{ssc:table1}
 
-\begin{msctable}{
-    |>{\ra}p{0.165\linewidth}
-    |>{\ra}p{0.075\linewidth}
-    |>{\ra}p{0.15\linewidth}
-    |>{\ra}p{0.155\linewidth}
-    |>{\ra}p{0.155\linewidth}
-    |>{\ra}p{0.155\linewidth}
-    |>{\ra}p{0.15\linewidth}|}
-\hline
-\rowcolor{gray!40}
-\textbf{Organisation Role} &
-\textbf{PIC} &
-\textbf{Legal Entity Short Name} &
-\textbf{Academic Organisation (Y/N)} &
-\textbf{Country} &
-\textbf{Name of Supervisor} \\
-\hline
+Only relevant rows from the table should be kept.
+
+\begin{mscaorgoverview}
 Beneficiary &
 &
 &
@@ -182,7 +208,7 @@ Other &
 &
 & \\
 \hline
-\end{msctable}
+\end{mscaorgoverview}
 
 \subsection{Template table: Capacity of the Participating Organisations}
 \label{ssc:table2}
@@ -199,10 +225,7 @@ partner, the table should be \emph{maximum ½ page in length}. Choose one of
     \item Associated partner for non-academic placement (optional)
 \end{itemize}
 
-\begin{msclongtable}[\small]{
-    |>{\ra}p{0.3\linewidth}
-    |>{\ra}p{0.66\linewidth}|}
-\hline
+\begin{mscaorgcapacity}
 \multicolumn{2}{|l|}{
     \textbf{[Role]}
 } \\
@@ -233,7 +256,7 @@ programmes/actions/projects} &
 actions/projects in which the institution/department has previously participated
 and/or is currently participating.} \\
 \hline
-\end{msclongtable}
+\end{mscaorgcapacity}
 
 \section{Additional ethics information}
 

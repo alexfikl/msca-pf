@@ -1,7 +1,7 @@
 % <<< preamble
 
 \def\fileversion{v3.1}
-\def\filedate{2025/05/30}
+\def\filedate{2024/05/30}
 \def\clsname{msca-pf}
 
 \NeedsTeXFormat{LaTeX2e}
@@ -123,7 +123,7 @@
 \if@draftproposal
     \RequirePackage[mathlines]{lineno}
     \RequirePackage{xcolor}
-    \renewcommand{\linenumberfont}{
+    \RenewDocumentCommand \linenumberfont {} {
         \normalfont\footnotesize\textcolor{black!50}
     }
 \fi
@@ -132,8 +132,8 @@
 
 % <<< page header/footer styles
 
-\newcommand{\mscaidentifier}[1]{\def\@mscaidentifier{#1}}
-\newcommand{\mscaproject}[1]{\def\@mscaproject{#1}}
+\NewDocumentCommand \mscaidentifier { m } {\def\@mscaidentifier{#1}}
+\NewDocumentCommand \mscaproject { m } {\def\@mscaproject{#1}}
 
 \def\@mscaidentifier{HORIZON-MSCA-2024-PF-01}
 \def\@mscaproject{TBD}
@@ -167,43 +167,78 @@
 % <<< table
 
 \newenvironment{msctable}[2][\footnotesize]{
+\vspace{-20pt}
 \begin{center}
 #1 % Set the right size (and font maybe)
-\newcommand{\ra}{\raggedright\arraybackslash}
 \begin{tabular}{#2}
 }{%
 \end{tabular}
 \end{center}
+\vspace{-10pt}
 }
 
 \newenvironment{msclongtable}[2][\footnotesize]{
+\vspace{-20pt}
 \begin{center}
 #1 % Set the right size (and font maybe)
-\newcommand{\ra}{\raggedright\arraybackslash}
 \begin{longtable}{#2}
 }{%
 \end{longtable}
 \end{center}
+\vspace{-40pt}
+}
+
+\newenvironment{mscaorgoverview}[1][\footnotesize]{
+\begin{msctable}{
+    |>{\ra}p{0.165\linewidth}
+    |>{\ra}p{0.075\linewidth}
+    |>{\ra}p{0.15\linewidth}
+    |>{\ra}p{0.155\linewidth}
+    |>{\ra}p{0.155\linewidth}
+    |>{\ra}p{0.155\linewidth}
+    |>{\ra}p{0.15\linewidth}|}
+\hline
+\rowcolor{gray!40}
+\textbf{Organisation Role} &
+\textbf{PIC} &
+\textbf{Legal Entity Short Name} &
+\textbf{Academic Organisation (Y/N)} &
+\textbf{Country} &
+\textbf{Name of Supervisor} \\
+\hline
+}{
+\hline
+\end{msctable}
+}
+
+\newenvironment{mscaorgcapacity}{
+% NOTE: This can contain a lot of text, so we make it long by default
+\begin{msclongtable}[\small]{
+    |>{\ra}p{0.3\linewidth}
+    |>{\ra}p{0.66\linewidth}|}
+\hline
+}{
+\hline
+\end{msclongtable}
 }
 
 % >>>
 
 % <<< cv
 
-\newcommand{\cvline}[2]{
-\begin{tabular}{@{}p{0.15\textwidth}@{}p{0.05\textwidth}@{}p{0.75\textwidth}}
-    \raggedleft \textbf{#1} &
-    &
-    #2.
+\newenvironment{cvitem}{
+\noindent \begin{tabular}{@{}>{\ra}p{0.15\linewidth}>{\ra}p{0.8\linewidth}}
+}{
 \end{tabular}
 \vspace{-3pt}
 }
 
-\newcommand{\cvitem}[4]{\cvline{#1}{\textbf{#2}, \emph{#3}, #4}}
-
-\newcommand{\cvdetail}[2]{\cvline{}{\textbf{#1}: #2}}
-
-\newcommand{\cvpub}[4]{\cvline{#1}{#2, \emph{#3}, #4}}
+% NOTE: \cventry{dates}{name}{details}{location}
+\NewDocumentCommand \cventry { m m m m } {\raggedleft \textbf{#1} & \textbf{#2}, \emph{#3}, #4. \\}
+% NOTE: \cvdetail{name}{details}
+\NewDocumentCommand \cvdetail { m m } {& \textbf{#1}: #2. \\}
+% NOTE: \cvpub{date}{authors}{title}{journal etc}
+\NewDocumentCommand \cvpub { m m m m } {\raggedleft \textbf{#1} & #2, \emph{#3}, #4. \\}
 
 % >>>
 

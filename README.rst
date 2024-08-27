@@ -85,16 +85,16 @@ following commands are mandatory:
 Additionally, there are also some commands to help constructing the CV and other
 little tables in the submission:
 
-* ``msctable``: a wrapper around ``tabular`` that can be used in the exact
-  same way, but imposes a consistent font size and formatting for tables.
-* ``msclongtable``: a wrapper around ``longtable`` similar to ``msctable``
-  (allows tables across multiple pages).
-* ``cvitem``: used as ``\cvline{dates}{main}{details}{location}`` to add a
-  simple line to the required CV.
-* ``cvdetail``: used as ``\cvdetail{name}{description}`` to add properly
-  aligned comments to entries.
-* ``cvpub``: used as ``\cvpub{date}{authors}{title}{journal}`` to add a
-  publication.
+* ``mscaorgoverview``: an environment (wrapper around ``tabular``) that defines
+  the table template from Section 5.1 for participating organisations. This is a
+  fixed 6 column table.
+* ``mscaorgcapacity``: an environment (wrapper around ``longtable``) that defines
+  the table template from Section 5.2 for participating organisations. This is a
+  fixed 2 column table.
+* ``cvitem``: an environment to define a nicely aligned CV item.
+* ``\cventry{dates}{name}{details}{location}``: a generic entry in the CV.
+* ``\cvdetail{name}{description}``: a additional description for an entry.
+* ``\cvpub{date}{authors}{title}{journal}``: a publication.
 
 A Gantt chart must also be provided in the proposal. There are some LaTeX packages,
 e.g. `pgfgantt <https://ctan.org/pkg/pgfgantt?lang=en>`__, that can be used to

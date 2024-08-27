@@ -75,10 +75,16 @@ The class has two options meant for drafting:
 * ``draftproposal``: adds helpful drafting options, such as line numbers and
   a time stamp.
 
-It also provides a few useful commands that can be used in the proposal:
+It also provides a few useful commands that can be used in the proposal. The
+following commands are mandatory:
 
-* ``mscaidentifier``: the call identifier, e.g. ``HORIZON-MSCA-2022-PF-01``.
+* ``mscaidentifier``: the call identifier, e.g. ``HORIZON-MSCA-2022-PF-01``. This
+  should be set to the appropriate version by default.
 * ``mscaproject``: the acronym for the project.
+
+Additionally, there are also some commands to help constructing the CV and other
+little tables in the submission:
+
 * ``msctable``: a wrapper around ``tabular`` that can be used in the exact
   same way, but imposes a consistent font size and formatting for tables.
 * ``msclongtable``: a wrapper around ``longtable`` similar to ``msctable``
@@ -89,3 +95,8 @@ It also provides a few useful commands that can be used in the proposal:
   aligned comments to entries.
 * ``cvpub``: used as ``\cvpub{date}{authors}{title}{journal}`` to add a
   publication.
+
+A Gantt chart must also be provided in the proposal. There are some LaTeX packages,
+e.g. `pgfgantt <https://ctan.org/pkg/pgfgantt?lang=en>`__, that can be used to
+create such charts. However, you can also just use a third party application,
+export the chart as a PNG or PDF, and include it like that.

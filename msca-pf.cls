@@ -166,6 +166,8 @@
 
 % <<< table
 
+\NewDocumentCommand \ra {} {\raggedright\arraybackslash}
+
 \newenvironment{msctable}[2][\footnotesize]{
 \vspace{-20pt}
 \begin{center}

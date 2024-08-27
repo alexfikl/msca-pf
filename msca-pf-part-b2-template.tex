@@ -28,8 +28,8 @@
 
 % {{{ commands
 
-\NewDocumentCommand \ra {} {\raggedright\arraybackslash}
-
+% add your own fancy commands
+% \NewDocumentCommand \mycmd { m } {\textbf{#1}}
 
 % }}}
 
@@ -57,6 +57,7 @@ provided here.}
 \textit{When in doubt, always consult the official template and programme guide!}
 
 \section{CV of the researcher (indicative length: 5 pages)}
+\label{sc:cv}
 
 Any information provided in Parts A and B of the proposal should be fully consistent.
 Always mention full dates (using format: dd/mm/yyyy). The CV should include the
@@ -112,12 +113,13 @@ having their last thesis defence after the call deadline will be automatically
 declared ineligible for this call.
 
 \section{Capacity of the Participating Organisation(s)}
+\label{sc:organisations}
 
 Please provide an overview list of all participating organisations (the
 beneficiary and, where applicable, all associated partners) using template
-table~\ref{ssc:table1} below, and more detailed information for each of the
-participating organisations (using a separate table for each organisation) using
-template table~\ref{ssc:table2} below.
+table~\ref{ssc:organisations:overview} below, and more detailed information for
+each of the participating organisations (using a separate table for each
+organisation) using template table~\ref{ssc:organisations:capacity} below.
 
 Any inter-relationship between the participating organisation(s) or individuals
 and other entities/persons appearing (e.g. family ties, shared premises or
@@ -138,8 +140,7 @@ Identification Code} (PIC) for the beneficiary and, where applicable, each
 associated partner.
 
 \subsection{Template table: Overview of Participating Organisations}
-\label{ssc:table1}
-
+\label{ssc:organisations:overview}
 Only relevant rows from the table should be kept.
 
 \begin{mscaorgoverview}
@@ -182,7 +183,7 @@ Other &
 \end{mscaorgoverview}
 
 \subsection{Template table: Capacity of the Participating Organisations}
-\label{ssc:table2}
+\label{ssc:organisations:capacity}
 
 Please complete a separate table for each participating organisation. For the
 beneficiary, this table should be \emph{maximum 1 page in length}; for each associated
@@ -230,15 +231,18 @@ and/or is currently participating.} \\
 \end{mscaorgcapacity}
 
 \section{Additional ethics information}
+\label{sc:ethics}
 
 Additional information that could not be included in Part A of the proposal (if needed).
 
 \section{Additional information on security screening}
+\label{sc:security}
 
 Additional information on security aspects that could not be included in Part
 A of the proposal (if needed).
 
 \section{Environmental considerations in light of MSCA Green Charter}
+\label{sc:environment}
 
 Please explain how the proposed project would strive to adhere to the MSCA Green
 Charter\footnotemark{} during its implementation. Please indicate here --
@@ -251,6 +255,7 @@ with the principles set out in the MSCA Green Charter.
 \section{
     Required for Global Fellowships only: Letter(s) of commitment from
     associated partners (hosting of the outgoing phase)}
+\label{sc:commitment_letter}
 
 Use this section to add scanned copies of the letter(s) of commitment, if applicable.
 

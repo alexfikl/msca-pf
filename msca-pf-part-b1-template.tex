@@ -26,6 +26,13 @@
 
 % }}}
 
+% {{{ commands
+
+% add your own fancy commands
+% \NewDocumentCommand \mycmd { m } {\textbf{#1}}
+
+% }}}
+
 % {{{ title
 
 \title{Part B-1}
@@ -50,10 +57,12 @@ automatic document processing and are highly recommended by the programme.}
 \textit{When in doubt, always consult the official template and programme guide!}
 
 \section{Excellence \mscatag{REL-EVA-RE}}
+\label{sc:excellence}
 
 \subsection{
     Quality and pertinence of the project's research and innovation objectives
     (and the extent to which they are ambitious, and go beyond the state of the art)}
+\label{ssc:excellence:quality}
 
 At a minimum, address the following aspects:
 
@@ -70,6 +79,7 @@ At a minimum, address the following aspects:
     (including interdisciplinary approaches, consideration of the gender
     dimension and other diversity aspects if relevant for the research project,
     and the quality of open science practices)}
+\label{ssc:excellence:methodology}
 
 At a minimum, address the following aspects:
 
@@ -169,6 +179,7 @@ At a minimum, address the following aspects:
 
 \subsection{Quality of the supervision, training and of the two-way transfer of
     knowledge between the researcher and the host}
+\label{ssc:excellence:supervision}
 
 At a minimum, address the following aspects:
 
@@ -214,16 +225,18 @@ funded-projects are strongly encouraged to take them into account.}
 
 \subsection{Quality and appropriateness of the researcher's professional
 experience, competences and skills}
+\label{ssc:excellence:researcher}
 
 Discuss the quality and appropriateness of the researcher’s existing professional
 experience in relation to the proposed research project.
 
 \section{Impact \mscatag{IMP-ACT-IA}}
-\label{IMP-ACT-IA}
+\label{sc:impact}
 
 \subsection{Credibility of the measures to enhance the career perspectives
 and employability of the researcher and contribution to his/her skills
 development}
+\label{ssc:impact:career}
 
 At a minimum, address the following aspects:
 
@@ -237,7 +250,7 @@ At a minimum, address the following aspects:
 \subsection{Suitability and quality of the measures to maximise expected
 outcomes and impacts, as set out in the dissemination and exploitation plan,
 including communication activities \mscatag{COM-DIS-VIS-CDV}}
-\label{COM-DIS-VIS-CDV}
+\label{ssc:impact:outcomes}
 
 At a minimum, address the following aspects:
 
@@ -274,6 +287,7 @@ At a minimum, address the following aspects:
 
 \subsection{The magnitude and importance of the project’s contribution to the
 expected scientific, societal and economic impacts}
+\label{ssc:impact:future}
 
 \begin{itemize}
     \item Provide a narrative explaining how the project’s results are expected
@@ -322,10 +336,11 @@ expected scientific, societal and economic impacts}
 
 \section{Quality and Efficiency of the Implementation
          \mscatag{QUA-LIT-QL} \mscatag{WRK-PLA-WP} \mscatag{CON-SOR-CS} \mscatag{PRJ-MGT-PM}}
-\label{WRK-PLA-WP}
+\label{sc:implementation}
 
 \subsection{Quality and effectiveness of the work plan, assessment of risks and
 appropriateness of the effort assigned to work packages}
+\label{ssc:implementation:workplan}
 
 At a minimum, address the following aspects:
 
@@ -348,6 +363,7 @@ from the start of the action (Month 1).
 
 \subsection{Quality and capacity of the host institutions and participating
 organisations, including hosting arrangements}
+\label{ssc:implementation:host}
 
 At a minimum, address the following aspects:
 
@@ -364,6 +380,7 @@ Note that for GF, both the quality and capacity of the outgoing Third Country
 host and the return host should be outlined.
 
 \subsection*{Associated partners linked to a beneficiary {\protect\footnotemark{}}}
+\label{ssc:implementation:partners}
 
 If applicable, outline here the involvement of any 'associated partners linked
 to a beneficiary' (in particular, the name of the entity, the type of link with

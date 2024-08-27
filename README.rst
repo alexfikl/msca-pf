@@ -96,6 +96,29 @@ little tables in the submission:
 * ``\cvdetail{name}{description}``: a additional description for an entry.
 * ``\cvpub{date}{authors}{title}{journal}``: a publication.
 
+The CV commands can be used in the following fashion:
+
+.. code:: tex
+
+    % examples for a general entry
+    \begin{cvitem}
+    \cventry{DD/MM/YYYY DD/MM/YYYY}{Ph.D. in Aerospace Engineering}{University Name}{Location}
+    \cvdetail{Title}{Title of my Ph.D}
+    \cvdetail{Advisor}{John Doe}
+    \end{cvitem}
+
+    \begin{cvitem}
+    \cventry{DD/MM/YYYY DD/MM/YYYY}{Job Title}{Company / University}{Location}
+    \cvdetail{Description}{Job description in short}
+    \end{cvitem}
+
+    % example for a publication
+    \begin{cvitem}
+    \cvpub{DD/MM/YYYY}{John Doe, Jane Doe}{Title of Paper}{Journal Name, Vol. XX, pp. XX--XX}
+    \cvdetail{Description}{Main findings of the paper}
+    \cvdetail{URL}{DOI or arXiV URL}
+    \end{cvitem}
+
 A Gantt chart must also be provided in the proposal. There are some LaTeX packages,
 e.g. `pgfgantt <https://ctan.org/pkg/pgfgantt?lang=en>`__, that can be used to
 create such charts. However, you can also just use a third party application,

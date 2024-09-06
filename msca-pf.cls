@@ -1,6 +1,7 @@
 % <<< preamble
 
-\def\fileversion{v3.1}
+\def\mscaversion{3.1}
+\def\fileversion{v\mscaversion}
 \def\filedate{2024/05/30}
 \def\clsname{msca-pf}
 
@@ -48,7 +49,7 @@
     \timehh=\time \divide\timehh by 60
     \timemm=\time \count255=\timehh \multiply\count255 by -60
         \advance\timemm by \count255
-    \def\draftheader{\small \textit{Draft of \today}}
+    \def\draftheader{\textit{Draft of \today}\vspace{-1.75em}}
 \else
     \def\draftheader{\empty}
 \fi
@@ -115,6 +116,14 @@
     linkcolor=black
 }
 
+% <<< other
+
+\definecolor{MSCATagGray}{RGB}{180, 180, 180}
+\NewDocumentCommand \mscatag { m } {\textcolor{MSCATagGray}{\small \#@#1@\#}}
+\NewDocumentCommand \mscatagend { m } {\noindent \textcolor{MSCATagGray}{\small \#§#1§\#}}
+
+% >>>
+
 % >>>
 
 % <<< main matter
@@ -136,17 +145,22 @@
 \NewDocumentCommand \mscaproject { m } {\def\@mscaproject{#1}}
 
 \def\@mscaidentifier{HORIZON-MSCA-2024-PF-01}
-\def\@mscaproject{TBD}
+\def\@mscaproject{MSCA Postdoctoral Fellowships 2024}
 
 \pagestyle{plain}
 \clearpairofpagestyles
 
-\def\callheader{\textnormal{Call: \small \@mscaidentifier -- \@mscaproject}}
+\def\callihead{\textnormal{\scriptsize Call: \@mscaidentifier: \@mscaproject}}
+\def\callohead{\textnormal{\scriptsize \textcolor{MSCATagGray}{
+    EU Grants: Application form (HE MSCA PF) V\mscaversion \\
+    \draftheader
+    }
+}}
 \def\pagefooter{\textnormal{Part B -- Page \thepage\, of\, \pageref{LastPage}}}
 
 \cfoot[\pagefooter]{\pagefooter}
-\ohead[\draftheader]{\draftheader}
-\ihead[\callheader]{\callheader}
+\ihead[\callihead]{\callihead}
+\ohead[\callohead]{\callohead}
 
 % >>>
 
@@ -253,14 +267,6 @@
 \cventry{#1}{#2}{#3}{#4}
 \end{cvitem}
 }
-
-% >>>
-
-% <<< other
-
-\definecolor{MSCATagGray}{RGB}{180, 180, 180}
-\NewDocumentCommand \mscatag { m } {\textcolor{MSCATagGray}{\small \#@#1@\#}}
-\NewDocumentCommand \mscatagend { m } {\noindent \textcolor{MSCATagGray}{\small \#§#1§\#}}
 
 % >>>
 

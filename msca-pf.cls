@@ -1,8 +1,8 @@
 % <<< preamble
 
-\def\mscaversion{3.1}
+\def\mscaversion{4.0}
 \def\fileversion{v\mscaversion}
-\def\filedate{2024/05/30}
+\def\filedate{2025/04/09}
 \def\clsname{msca-pf}
 
 \NeedsTeXFormat{LaTeX2e}
@@ -144,8 +144,8 @@
 \NewDocumentCommand \mscaidentifier { m } {\def\@mscaidentifier{#1}}
 \NewDocumentCommand \mscaproject { m } {\def\@mscaproject{#1}}
 
-\def\@mscaidentifier{HORIZON-MSCA-2024-PF-01}
-\def\@mscaproject{MSCA Postdoctoral Fellowships 2024}
+\def\@mscaidentifier{HORIZON-MSCA-2025-PF-01}
+\def\@mscaproject{MSCA Postdoctoral Fellowships 2025}
 
 \pagestyle{plain}
 \clearpairofpagestyles

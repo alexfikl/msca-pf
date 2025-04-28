@@ -1,8 +1,8 @@
 % <<< preamble
 
-\def\mscaversion{4.0}
+\def\mscaversion{4.1}
 \def\fileversion{v\mscaversion}
-\def\filedate{2025/04/09}
+\def\filedate{2025/04/28}
 \def\clsname{msca-pf}
 
 \NeedsTeXFormat{LaTeX2e}

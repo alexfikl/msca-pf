@@ -40,9 +40,9 @@
 }
 
 % tighted sections a bit for more space
-\RedeclareSectionCommand[beforeskip=0.5em, afterskip=0.5em]{section}
-\RedeclareSectionCommand[beforeskip=0.5em, afterskip=0.5em]{subsection}
-\RedeclareSectionCommand[beforeskip=0.25em, afterskip=0.25em]{subsubsection}
+\RedeclareSectionCommand[beforeskip=0.5em, afterskip=0.5em, font=\large\bfseries\itshape]{section}
+\RedeclareSectionCommand[beforeskip=0.5em, afterskip=0.5em, font=\normalsize\bfseries\itshape]{subsection}
+\RedeclareSectionCommand[beforeskip=0.25em, afterskip=0.25em, font=\normalsize\bfseries\itshape]{subsubsection}
 
 \if@draftproposal
     \newcount\timehh\newcount\timemm

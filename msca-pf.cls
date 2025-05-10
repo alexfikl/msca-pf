@@ -68,13 +68,19 @@
 \ifpdftex
     \RequirePackage[T1]{fontenc}
     \RequirePackage{mathptmx}
+    \RequirePackage{helvet}
 \else
     \RequirePackage{fontspec}
     \IfFontExistsTF{Times New Roman}{
-        \setmainfont[Ligatures=Rare]{Times New Roman}}{
+        \setmainfont[Ligatures={TeX,Rare}]{Times New Roman}}{
         \IfFontExistsTF{Nimbus Roman}{
             \setmainfont{Nimbus Roman}
-        }{\PackageWarning{msca-pf}{No Times New Roman font could be found}}}
+        }{\PackageWarning{msca-pf}{Serif font not found: Times New Roman or Nimbus Roman}}}
+    \IfFontExistsTF{Arial}{
+        \setsansfont[Ligatures=TeX]{Arial}}{
+        \IfFontExistsTF{Nimbus Sans}{
+            \setsansfont[Ligatures=TeX]{Nimbus Sans}
+        }{\PackageWarning{msca-pf}{Sans serif font not found: Arial or Nimbus Sans}}}
 \fi
 
 % build fancy table required for organization description
@@ -119,8 +125,8 @@
 % <<< other
 
 \definecolor{MSCATagGray}{RGB}{180, 180, 180}
-\NewDocumentCommand \mscatag { m } {\textcolor{MSCATagGray}{\small \#@#1@\#}}
-\NewDocumentCommand \mscatagend { m } {\noindent \textcolor{MSCATagGray}{\small \#§#1§\#}}
+\NewDocumentCommand \mscatag { m } {\textcolor{MSCATagGray}{\normalfont\scriptsize\sffamily \#@#1@\#}}
+\NewDocumentCommand \mscatagend { m } {\noindent \textcolor{MSCATagGray}{\normalfont\scriptsize\sffamily \#§#1§\#}}
 
 % >>>
 

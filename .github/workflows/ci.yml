@@ -1,0 +1,39 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    - cron: '30 12 * * 0'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  typos:
+    if: "!contains(github.event.head_commit.message, 'skip ci')"
+    name: Spelling (typos)
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: crate-ci/typos@master
+
+  build:
+    name: Build (${{ matrix.engine }}-${{ matrix.texlive_version }})
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        engine: ['pdflatex', 'lualatex']
+        texlive_version: ['2022', '2023', '2024']
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compile LaTeX template
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: template.tex
+          texlive_version: ${{ matrix.texlive_version }}
+          latexmk_use_lualatex: ${{ matrix.engine == 'lualatex' }}

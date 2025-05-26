@@ -34,6 +34,8 @@ jobs:
       - name: Compile LaTeX template
         uses: xu-cheng/latex-action@v3
         with:
-          root_file: template.tex
+          root_file: |
+            msca-pf-part-b1-template.tex
+            msca-pf-part-b2-template.tex
           texlive_version: ${{ matrix.texlive_version }}
           latexmk_use_lualatex: ${{ matrix.engine == 'lualatex' }}

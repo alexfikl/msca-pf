@@ -12,7 +12,7 @@ LaTeX class and template for Marie Skłodowska-Curie Actions Postdoctoral Fellow
 grant applications.
 
 * Details and original template is provided
-  [here](https://rea.ec.europa.eu/funding-and-grants/horizon-europe-marie-sklodowska-curie-actions/horizon-europe-msca-how-apply_en>)
+  [here](https://rea.ec.europa.eu/funding-and-grants/horizon-europe-marie-sklodowska-curie-actions/msca-postdoctoral-fellowships_en)
   (calls are updated each year).
 
 * For the official editable version of the template, you must start the submission

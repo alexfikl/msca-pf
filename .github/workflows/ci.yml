@@ -27,7 +27,7 @@ jobs:
     strategy:
       matrix:
         engine: ['pdflatex', 'lualatex']
-        texlive_version: ['2022', '2023', '2024']
+        texlive_version: ['2022', '2023', '2024', '2025']
 
     steps:
       - uses: actions/checkout@v4

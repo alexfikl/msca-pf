@@ -4,9 +4,11 @@
 [![Open in Overleaf](https://img.shields.io/static/v1?label=LaTeX&message=Open-in-Overleaf&color=47a141&style=flat&logo=overleaf)](https://www.overleaf.com/docs?snip_uri=https://github.com/alexfikl/msca-pf/archive/refs/heads/main.zip)
 
 > [!NOTE]
-> Only the 2022 template was submitted and deemed eligible by the Horizon program.
-> Newer versions are simply updated based on the official template. Reporting any
-> discrepancies is highly appreciated!
+> This is an unofficial template based on the templates provided by the MSCA-PF
+> program (originally in the RTF format). Proposals based on this template have
+> been successfully submitted in 2022 and 2024 (to my knowledge). Newer
+> versions of this template are available and reporting any discrepancies is
+> highly appreciated!
 
 LaTeX class and template for Marie Skłodowska-Curie Actions Postdoctoral Fellow
 grant applications.

@@ -117,7 +117,7 @@
 \else
     \RequirePackage{fontspec}
     \IfFontExistsTF{Times New Roman}{
-        \setmainfont[Ligatures={TeX,Rare}]{Times New Roman}}{
+        \setmainfont[Ligatures={TeX,Historic},Renderer=Basic]{Times New Roman}}{
         \IfFontExistsTF{Nimbus Roman}{
             \setmainfont{Nimbus Roman}
         }{\PackageWarning{msca-pf}{Serif font not found: Times New Roman or Nimbus Roman}}}

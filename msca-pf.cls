@@ -94,6 +94,7 @@
         gridcolor=gray!70,
         subgridcolor=gray!70,
         texcoord]{eso-pic}
+    \usepackage{showframe}
 \fi
 
 % >>>

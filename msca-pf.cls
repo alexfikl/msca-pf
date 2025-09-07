@@ -158,7 +158,7 @@
 \def\@mscaidentifier{HORIZON-MSCA-2025-PF-01}
 \def\@mscaproject{MSCA Postdoctoral Fellowships 2025}
 
-\def\callihead{\textnormal{\scriptsize Call: \@mscaidentifier: \@mscaproject}\vspace{1.25em}}
+\def\callihead{\textnormal{\scriptsize Call: \@mscaidentifier: \@mscaproject}\vspace{1.2em}}
 \def\callohead{\textnormal{\scriptsize \textcolor{MSCATagGray}{
     EU Grants: Application form (HE MSCA PF) V\mscaversion \\
     \draftheader
@@ -221,9 +221,8 @@
     |>{\ra}p{0.165\linewidth}
     |>{\ra}p{0.075\linewidth}
     |>{\ra}p{0.15\linewidth}
-    |>{\ra}p{0.155\linewidth}
-    |>{\ra}p{0.155\linewidth}
-    |>{\ra}p{0.155\linewidth}
+    |>{\ra}p{0.15\linewidth}
+    |>{\ra}p{0.15\linewidth}
     |>{\ra}p{0.15\linewidth}|}
 \hline
 \rowcolor{gray!40}
@@ -243,7 +242,7 @@
 % NOTE: This can contain a lot of text, so we make it long by default
 \begin{msclongtable}[\small]{
     |>{\ra}p{0.3\linewidth}
-    |>{\ra}p{0.66\linewidth}|}
+    |>{\ra}p{0.646\linewidth}|}
 \hline
 }{
 \hline

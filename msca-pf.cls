@@ -210,14 +210,11 @@
 }
 
 \newenvironment{msclongtable}[2][\footnotesize]{
-\vspace{-20pt}
-\begin{center}
+\centering
 #1 % Set the right size (and font maybe)
 \begin{longtable}{#2}
 }{%
 \end{longtable}
-\end{center}
-\vspace{-40pt}
 }
 
 \newenvironment{mscaorgoverview}[1][\footnotesize]{

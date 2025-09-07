@@ -72,9 +72,9 @@
         \textit{Draft of \today\ at
         \ifnum\timehh<10 0\fi\number\timehh
         \,:\,%
-        \ifnum\timemm<10 0\fi\number\timemm}\vspace{-1.6em}}
+        \ifnum\timemm<10 0\fi\number\timemm}}
 \else
-    \def\draftheader{\empty\vspace{-1.7em}}
+    \def\draftheader{\empty}
 \fi
 
 % add line numbers if in draft mode
@@ -157,7 +157,7 @@
 \def\@mscaidentifier{HORIZON-MSCA-2025-PF-01}
 \def\@mscaproject{MSCA Postdoctoral Fellowships 2025}
 
-\def\callihead{\textnormal{\scriptsize Call: \@mscaidentifier: \@mscaproject}}
+\def\callihead{\textnormal{\scriptsize Call: \@mscaidentifier: \@mscaproject}\vspace{1.25em}}
 \def\callohead{\textnormal{\scriptsize \textcolor{MSCATagGray}{
     EU Grants: Application form (HE MSCA PF) V\mscaversion \\
     \draftheader
@@ -165,7 +165,9 @@
 }}
 \def\pagefooter{\textnormal{Part B -- Page \thepage\, of\, \pageref*{LastPage}}}
 
+\clearpairofpagestyles
 \pagestyle{scrheadings}
+
 \cfoot[\pagefooter]{\pagefooter}
 \ihead[\callihead]{\callihead}
 \ohead[\callohead]{\callohead}

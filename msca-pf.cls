@@ -112,7 +112,8 @@
 % required font is Times New Roman (or Nimbus Roman on Linux)
 \ifpdftex
     \RequirePackage[T1]{fontenc}
-    \RequirePackage{mathptmx}
+    \RequirePackage{newtxtext}
+    \RequirePackage{newtxmath}
     \RequirePackage{helvet}
 \else
     \RequirePackage{fontspec}

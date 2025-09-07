@@ -45,11 +45,15 @@
 \RedeclareSectionCommand[beforeskip=0.25em, afterskip=0.25em, font=\normalsize\bfseries\itshape]{subsubsection}
 
 \if@draftproposal
-    \newcount\timehh\newcount\timemm
+    \newcount\timehh
     \timehh=\time \divide\timehh by 60
-    \timemm=\time \count255=\timehh \multiply\count255 by -60
-        \advance\timemm by \count255
-    \def\draftheader{\textit{Draft of \today}\vspace{-1.75em}}
+    \newcount\timemm
+    \timemm=\time \count255=\timehh \multiply\count255 by -60 \advance\timemm by \count255
+    \def\draftheader{
+        \textit{Draft of \today\ at
+        \ifnum\timehh<10 0\fi\number\timehh
+        \,:\,%
+        \ifnum\timemm<10 0\fi\number\timemm}\vspace{-1.75em}}
 \else
     \def\draftheader{\empty\vspace{-1.85em}}
 \fi

@@ -166,7 +166,7 @@
     \draftheader
     }
 }}
-\def\pagefooter{\textnormal{Part B -- Page \thepage\, of\, \pageref{LastPage}}}
+\def\pagefooter{\textnormal{Part B -- Page \thepage\, of\, \pageref*{LastPage}}}
 
 \cfoot[\pagefooter]{\pagefooter}
 \ihead[\callihead]{\callihead}

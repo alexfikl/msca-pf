@@ -46,8 +46,6 @@
 \RequirePackage{lastpage}
 % customize headers and footers
 \RequirePackage{scrlayer-scrpage}
-% indent first paragraph in a section
-\RequirePackage{indentfirst}
 
 % >>>
 

@@ -157,9 +157,6 @@
 \def\@mscaidentifier{HORIZON-MSCA-2025-PF-01}
 \def\@mscaproject{MSCA Postdoctoral Fellowships 2025}
 
-\pagestyle{plain}
-\clearpairofpagestyles
-
 \def\callihead{\textnormal{\scriptsize Call: \@mscaidentifier: \@mscaproject}}
 \def\callohead{\textnormal{\scriptsize \textcolor{MSCATagGray}{
     EU Grants: Application form (HE MSCA PF) V\mscaversion \\
@@ -168,6 +165,7 @@
 }}
 \def\pagefooter{\textnormal{Part B -- Page \thepage\, of\, \pageref*{LastPage}}}
 
+\pagestyle{scrheadings}
 \cfoot[\pagefooter]{\pagefooter}
 \ihead[\callihead]{\callihead}
 \ohead[\callohead]{\callohead}

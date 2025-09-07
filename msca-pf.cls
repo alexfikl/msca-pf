@@ -51,7 +51,7 @@
         \advance\timemm by \count255
     \def\draftheader{\textit{Draft of \today}\vspace{-1.75em}}
 \else
-    \def\draftheader{\empty\vspace{-1.9em}}
+    \def\draftheader{\empty\vspace{-1.85em}}
 \fi
 
 % >>>
@@ -172,13 +172,17 @@
 
 % <<< title
 
+\makeatletter
 \def\@maketitle{
-\begin{center}
-    \normalfont \normalsize
-    \vspace{0.3cm}
+\if@draftproposal\begin{nolinenumbers}\fi
+{
+    \null
+    \centering
+    \vspace{-1em}
     {\huge \bfseries \@title \par}
-    \vspace{-0.2cm}
-\end{center}
+    \vspace{1em}
+}
+\if@draftproposal\end{nolinenumbers}\fi
 }
 \makeatother
 

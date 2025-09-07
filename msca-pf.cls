@@ -22,41 +22,10 @@
 
 % additional options passed to `scrartcl` class
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{scrartcl}}
-\PassOptionsToClass{DIV=14,11pt}{scrartcl}
-
-% >>>
-
-% <<< process options
+\PassOptionsToClass{DIV=14,11pt,a4paper,parskip=half*}{scrartcl}
 
 \ProcessOptions
 \LoadClass{scrartcl}
-
-% force serif fonts
-\addtokomafont{disposition}{\rmfamily}
-% additional options
-\KOMAoptions{
-    paper=A4,
-    parskip=half*,
-}
-
-% tighted sections a bit for more space
-\RedeclareSectionCommand[beforeskip=0.5em, afterskip=0.5em, font=\large\bfseries\itshape]{section}
-\RedeclareSectionCommand[beforeskip=0.5em, afterskip=0.5em, font=\normalsize\bfseries\itshape]{subsection}
-\RedeclareSectionCommand[beforeskip=0.25em, afterskip=0.25em, font=\normalsize\bfseries\itshape]{subsubsection}
-
-\if@draftproposal
-    \newcount\timehh
-    \timehh=\time \divide\timehh by 60
-    \newcount\timemm
-    \timemm=\time \count255=\timehh \multiply\count255 by -60 \advance\timemm by \count255
-    \def\draftheader{
-        \textit{Draft of \today\ at
-        \ifnum\timehh<10 0\fi\number\timehh
-        \,:\,%
-        \ifnum\timemm<10 0\fi\number\timemm}\vspace{-1.75em}}
-\else
-    \def\draftheader{\empty\vspace{-1.85em}}
-\fi
 
 % >>>
 
@@ -67,6 +36,77 @@
 \RequirePackage{iftex}
 \RequirePackage{xparse}
 \RequirePackage[hypertexnames=false,breaklinks=true]{hyperref}
+
+% build fancy table required for organization description
+\RequirePackage{array}
+\RequirePackage[table]{xcolor}
+\RequirePackage{longtable}
+% customize page numbering
+\RequirePackage{lastpage}
+% customize headers and footers
+\RequirePackage{scrlayer-scrpage}
+% indent first paragraph in a section
+\RequirePackage{indentfirst}
+
+% >>>
+
+% <<< process options
+
+\AtBeginDocument{
+    % customize PDF bookmarks a bit
+    \RequirePackage{bookmark}
+    \bookmarksetup{numbered}
+
+    \if@draftproposal
+        \linenumbers
+    \fi
+}
+
+\if@draftproposal
+    \newcount\timehh
+    \timehh=\time \divide\timehh by 60
+    \newcount\timemm
+    \timemm=\time \count255=\timehh \multiply\count255 by -60 \advance\timemm by \count255
+
+    \def\draftheader{
+        \textit{Draft of \today\ at
+        \ifnum\timehh<10 0\fi\number\timehh
+        \,:\,%
+        \ifnum\timemm<10 0\fi\number\timemm}\vspace{-1.6em}}
+\else
+    \def\draftheader{\empty\vspace{-1.7em}}
+\fi
+
+% add line numbers if in draft mode
+\if@draftproposal
+    \RequirePackage[mathlines]{lineno}
+    \RequirePackage{xcolor}
+    \RenewDocumentCommand \linenumberfont {} {
+        \normalfont\footnotesize\textcolor{black!50}
+    }
+\fi
+
+% enable this to better check sizing
+\if@layoutgrid
+    \RequirePackage[
+        grid, gridBG,
+        gridunit=mm,
+        gridcolor=gray!70,
+        subgridcolor=gray!70,
+        texcoord]{eso-pic}
+\fi
+
+% >>>
+
+% <<< general formatting
+
+% make links a bit less intrusive
+\hypersetup{
+    colorlinks=true,
+    urlcolor=blue,
+    citecolor=black,
+    linkcolor=black
+}
 
 % required font is Times New Roman (or Nimbus Roman on Linux)
 \ifpdftex
@@ -87,65 +127,25 @@
         }{\PackageWarning{msca-pf}{Sans serif font not found: Arial or Nimbus Sans}}}
 \fi
 
-% build fancy table required for organization description
-\RequirePackage{array}
-\RequirePackage[table]{xcolor}
-\RequirePackage{longtable}
-% customize page numbering
-\RequirePackage{lastpage}
-% customize headers and footers
-\RequirePackage{scrlayer-scrpage}
-% indent first paragraph in a section
-\RequirePackage{indentfirst}
+% force serif fonts
+\addtokomafont{disposition}{\rmfamily}
 
-% enable this to better check sizing
-\if@layoutgrid
-    \RequirePackage[
-        grid, gridBG,
-        gridunit=mm,
-        gridcolor=gray!70,
-        subgridcolor=gray!70,
-        texcoord]{eso-pic}
-\fi
+% tighted sections a bit for more space
+\RedeclareSectionCommand[beforeskip=0.5em, afterskip=0.5em, font=\large\bfseries\itshape]{section}
+\RedeclareSectionCommand[beforeskip=0.5em, afterskip=0.5em, font=\normalsize\bfseries\itshape]{subsection}
+\RedeclareSectionCommand[beforeskip=0.25em, afterskip=0.25em, font=\normalsize\bfseries\itshape]{subsubsection}
 
-\AtBeginDocument{
-    % customize PDF bookmarks a bit
-    \RequirePackage{bookmark}
-    \bookmarksetup{numbered}
+% FIXME: this is a bit of a hack, figure out a better place to put them
+\setlength{\footskip}{25pt}
+\setlength{\textheight}{\dimexpr\textheight+4em}
 
-    \if@draftproposal
-        \linenumbers
-    \fi
-}
+% >>>
 
-% make links a bit less intrusive
-\hypersetup{
-    colorlinks=true,
-    urlcolor=blue,
-    citecolor=black,
-    linkcolor=black
-}
-
-% <<< other
+% <<< tags
 
 \definecolor{MSCATagGray}{RGB}{180, 180, 180}
 \NewDocumentCommand \mscatag { m } {\textcolor{MSCATagGray}{\normalfont\scriptsize\sffamily \#@#1@\#}}
 \NewDocumentCommand \mscatagend { m } {\noindent \textcolor{MSCATagGray}{\normalfont\scriptsize\sffamily \#§#1§\#}}
-
-% >>>
-
-% >>>
-
-% <<< main matter
-
-% add line numbers if in draft mode
-\if@draftproposal
-    \RequirePackage[mathlines]{lineno}
-    \RequirePackage{xcolor}
-    \RenewDocumentCommand \linenumberfont {} {
-        \normalfont\footnotesize\textcolor{black!50}
-    }
-\fi
 
 % >>>
 
@@ -169,10 +169,6 @@
 \cfoot[\pagefooter]{\pagefooter}
 \ihead[\callihead]{\callihead}
 \ohead[\callohead]{\callohead}
-
-% FIXME: this is a bit of a hack, figure out a better place to put them
-\setlength{\footskip}{25pt}
-\setlength{\textheight}{\dimexpr\textheight+4em}
 
 % >>>
 

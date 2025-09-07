@@ -51,7 +51,7 @@
         \advance\timemm by \count255
     \def\draftheader{\textit{Draft of \today}\vspace{-1.75em}}
 \else
-    \def\draftheader{\empty\vspace{-2em}}
+    \def\draftheader{\empty\vspace{-1.9em}}
 \fi
 
 % >>>

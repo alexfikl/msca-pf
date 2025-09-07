@@ -36,6 +36,7 @@
 \RequirePackage{iftex}
 \RequirePackage{xparse}
 \RequirePackage[hypertexnames=false,breaklinks=true]{hyperref}
+\RequirePackage{bookmark}
 
 % build fancy table required for organization description
 \RequirePackage{array}
@@ -51,16 +52,6 @@
 % >>>
 
 % <<< process options
-
-\AtBeginDocument{
-    % customize PDF bookmarks a bit
-    \RequirePackage{bookmark}
-    \bookmarksetup{numbered}
-
-    \if@draftproposal
-        \linenumbers
-    \fi
-}
 
 \if@draftproposal
     \newcount\timehh
@@ -80,7 +71,6 @@
 % add line numbers if in draft mode
 \if@draftproposal
     \RequirePackage[mathlines]{lineno}
-    \RequirePackage{xcolor}
     \RenewDocumentCommand \linenumberfont {} {
         \normalfont\footnotesize\textcolor{black!50}
     }
@@ -96,6 +86,15 @@
         texcoord]{eso-pic}
     \usepackage{showframe}
 \fi
+
+\AtBeginDocument{
+    % customize PDF bookmarks a bit
+    \bookmarksetup{numbered}
+
+    \if@draftproposal
+        \linenumbers
+    \fi
+}
 
 % >>>
 

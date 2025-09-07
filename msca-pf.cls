@@ -172,6 +172,10 @@
 \ihead[\callihead]{\callihead}
 \ohead[\callohead]{\callohead}
 
+% FIXME: this is a bit of a hack, figure out a better place to put them
+\setlength{\footskip}{25pt}
+\setlength{\textheight}{\dimexpr\textheight+4em}
+
 % >>>
 
 % <<< title
@@ -283,11 +287,5 @@
 }
 
 % >>>
-
-\recalctypearea
-
-% FIXME: this is a bit of a hack, figure out a better place to put them
-\setlength{\footskip}{25pt}
-\setlength{\textheight}{\dimexpr\textheight+4em}
 
 \endinput

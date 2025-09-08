@@ -59,7 +59,7 @@ This packages provides the `msca-pf` class that is based on the
 KOMA-script `scrartcl` class and accepts any options meant for it. It can
 be used as
 ```tex
-\documentclass[11pt,layoutgrid,draftproposal]{msca-pf}
+\documentclass[12pt,layoutgrid,draftproposal]{msca-pf}
 
 % ... preamble ...
 
@@ -101,36 +101,6 @@ little tables in the submission:
 * `\cvdetail{name}{description}`: a additional description for an entry. This
   must be added in the same `cvitem` environment as the entry itself to use the
   same alignment.
-
-The CV commands can be used in the following fashion:
-```tex
-% examples for a general entry
-\begin{cvitem}
-\cventry{DD/MM/YYYY DD/MM/YYYY}{Ph.D. in Aerospace Engineering}{University Name}{Location}
-\cvdetail{Title}{Title of my Ph.D}
-\cvdetail{Advisor}{John Doe}
-\end{cvitem}
-
-\begin{cvitem}
-\cventry{DD/MM/YYYY DD/MM/YYYY}{Job Title}{Company / University}{Location}
-\cvdetail{Description}{Job description in short}
-\end{cvitem}
-
-% example of a bare entry (same as above without the details)
-\cventryitem{DD/MM/YYYY DD/MM/YYYY}{Job Title}{Company / University}{Location}
-
-% example for a publication
-\begin{cvitem}
-\cvpub{DD/MM/YYYY}{John Doe, Jane Doe}{Title of the Paper}
-                  {Journal Name, Vol. XX, pp. XX--XX}
-\cvdetail{Description}{Main findings of the paper}
-\cvdetail{URL}{DOI or arXiV URL}
-\end{cvitem}
-
-% example for a bare publication (same as above without the details)
-\cvpubitem{DD/MM/YYYY}{John Doe, Jane Doe}{Title of the Paper}
-                      {Journal Name, Vo. XX, pp. XX-XX}
-```
 
 A Gantt chart must also be provided in the proposal. There are some LaTeX packages,
 e.g. [pgfgantt](https://ctan.org/pkg/pgfgantt?lang=en), that can be used to

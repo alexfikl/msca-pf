@@ -156,7 +156,7 @@
 \def\@mscaidentifier{HORIZON-MSCA-2025-PF-01}
 \def\@mscaproject{MSCA Postdoctoral Fellowships 2025}
 
-\def\callihead{\textnormal{\scriptsize Call: \@mscaidentifier: \@mscaproject}\vspace{1.2em}}
+\def\callihead{\textnormal{\scriptsize Call: \@mscaidentifier: \@mscaproject}\vspace{\baselineskip}}
 \def\callohead{\textnormal{\scriptsize \textcolor{MSCATagGray}{
     EU Grants: Application form (HE MSCA PF) V\mscaversion \\
     \draftheader
@@ -181,9 +181,9 @@
 {
     \null
     \centering
-    \vspace{-1em}
+    \vspace{-\baselineskip}
     {\huge \bfseries \@title \par}
-    \vspace{1em}
+    \vspace{\baselineskip}
 }
 \if@draftproposal\end{nolinenumbers}\fi
 }
@@ -195,26 +195,23 @@
 
 \NewDocumentCommand \ra {} {\raggedright\arraybackslash}
 
-\newenvironment{msctable}[2][\footnotesize]{
-\vspace{-20pt}
-\begin{center}
-#1 % Set the right size (and font maybe)
-\begin{tabular}{#2}
+\newenvironment{msctable}[1]{
+\centering
+\footnotesize
+\begin{tabular}{#1}
 }{%
 \end{tabular}
-\end{center}
-\vspace{-10pt}
 }
 
-\newenvironment{msclongtable}[2][\footnotesize]{
+\newenvironment{msclongtable}[1]{
 \centering
-#1 % Set the right size (and font maybe)
-\begin{longtable}{#2}
+\small
+\begin{longtable}{#1}
 }{%
 \end{longtable}
 }
 
-\newenvironment{mscaorgoverview}[1][\footnotesize]{
+\newenvironment{mscaorgoverview}[1]{
 \begin{msctable}{
     |>{\ra}p{0.165\linewidth}
     |>{\ra}p{0.075\linewidth}
@@ -236,9 +233,9 @@
 \end{msctable}
 }
 
-\newenvironment{mscaorgcapacity}{
 % NOTE: This can contain a lot of text, so we make it long by default
-\begin{msclongtable}[\small]{
+\newenvironment{mscaorgcapacity}{
+\begin{msclongtable}{
     |>{\ra}p{0.3\linewidth}
     |>{\ra}p{0.646\linewidth}|}
 \hline
@@ -252,18 +249,17 @@
 % <<< cv
 
 \newenvironment{cvitem}{
-\noindent \begin{tabular}{@{}>{\ra}p{0.15\linewidth}>{\ra}p{0.8\linewidth}}
+\noindent \begin{tabular}{@{}>{\ra}p{0.18\linewidth}>{\ra}p{0.8\linewidth}}
 }{
 \end{tabular}
-\vspace{-3pt}
 }
 
 % NOTE: \cventry{dates}{name}{details}{location}
-\NewDocumentCommand \cventry { m m m m } {\raggedleft \textbf{#1} & \textbf{#2}, \emph{#3}, #4. \\}
+\NewDocumentCommand \cventry { m m m m } {#1 & \textbf{#2}, \emph{#3}, #4. \\}
 % NOTE: \cvdetail{name}{details}
 \NewDocumentCommand \cvdetail { m m } {& \textbf{#1}: #2. \\}
 % NOTE: \cvpub{date}{authors}{title}{journal etc}
-\NewDocumentCommand \cvpub { m m m m } {\raggedleft \textbf{#1} & #2, \emph{#3}, #4. \\}
+\NewDocumentCommand \cvpub { m m m m } {#1 & #2, \emph{#3}, #4. \\}
 
 \NewDocumentCommand \cvpubitem { m m m m } {%
 \begin{cvitem}

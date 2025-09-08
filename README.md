@@ -24,35 +24,17 @@ grant applications.
 * For a similar template for the Doctoral Network see
   [msca-dn](https://github.com/pgarner/msca-dn).
 
-Fonts
------
+Compilation
+-----------
 
-The official MSCA guidelines require the Times New Roman font on Windows or
-macOS and the Nimbus Roman font on Linux. When using PDFLaTeX this package
-uses the `mathptmx` font. When using XeLaTeX or LuaLaTeX, we try to load
-the Times New Roman font and, if it is not available, the Nimbus Roman font.
-
-If these do not work for you, you can load fonts yourself using e.g.
-```tex
-% on PDFLaTeX
-\usepackage{newtxtext}
-\usepackage{newtxmath}
-
-% on XeLaTeX / LuaLaTeX
-\setmainfont{Times New Roman}
-```
-
-Building
---------
-
-The resulting PDF files are included for easy viewing, but it is recommended to
-build the two parts with e.g. `latexmk` as follows
+The resulting PDF files are included for easy viewing. The template is compatible
+with both PDFLaTeX and LuaLaTeX/XeLaTeX. It can be easily build with e.g. `latexmk`
 ```sh
 latexmk -pdflua msca-pf-part-b1-template.tex
 latexmk -pdflua msca-pf-part-b2-template.tex
 ```
 
-Functionality
+Documentation
 -------------
 
 This packages provides the `msca-pf` class that is based on the
@@ -106,3 +88,25 @@ A Gantt chart must also be provided in the proposal. There are some LaTeX packag
 e.g. [pgfgantt](https://ctan.org/pkg/pgfgantt?lang=en), that can be used to
 create such charts. However, you can also just use a third party application,
 export the chart as a PNG or PDF, and include it like that.
+
+Fonts
+-----
+
+The official MSCA guidelines require the Times New Roman font on Windows or
+macOS and the Nimbus Roman font on Linux. When using PDFLaTeX this package
+uses the `mathptmx` font. When using XeLaTeX or LuaLaTeX, we try to load
+the Times New Roman font and, if it is not available, the Nimbus Roman font.
+
+If these do not work for you, you can load fonts yourself using e.g.
+```tex
+% on PDFLaTeX
+\usepackage{newtxtext}
+\usepackage{newtxmath}
+
+% on XeLaTeX / LuaLaTeX
+\setmainfont{Times New Roman}
+```
+
+## License
+
+Creative Commons Zero v1.0 Universal (CC0-1.0).

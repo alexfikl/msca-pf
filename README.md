@@ -109,4 +109,4 @@ If these do not work for you, you can load fonts yourself using e.g.
 
 ## License
 
-Creative Commons Zero v1.0 Universal (CC0-1.0).
+[Creative Commons Zero v1.0 Universal](https://creativecommons.org/public-domain/cc0/) (CC0-1.0).

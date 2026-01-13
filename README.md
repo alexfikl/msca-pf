@@ -24,6 +24,27 @@ grant applications.
 * For a similar template for the Doctoral Network see
   [msca-dn](https://github.com/pgarner/msca-dn).
 
+Usage
+-----
+
+To use this template, you essentially just need 3 files: `msca-pf.cls`,
+`msca-pf-part-b1-template.tex` and `msca-pf-part-b2-template.tex`.
+
+* The `msca-pf.cls` file contains the required formatting and some helpful options
+  (described below).
+
+* The other two files contain the actual sections and documentation text from
+  the MSCA program. These could be renamed to whatever you prefer, e.g.
+  `project-acronym-b1.tex`.
+
+The two templates for Part B1 and B2 contain a lot of text used to describe
+what the various sections should contain. This should, of course, be deleted as
+well. However, the sections themselves (and some tables) should stay in the
+given format and location.
+
+Finally, as the documents themselves mention at the start: when in doubt,
+always consult the official documentation!
+
 Compilation
 -----------
 

@@ -1,8 +1,8 @@
 % <<< preamble
 
-\def\mscaversion{4.1}
+\def\mscaversion{5.0}
 \def\fileversion{v\mscaversion}
-\def\filedate{2025/04/28}
+\def\filedate{2026/04/15}
 \def\clsname{msca-pf}
 
 \NeedsTeXFormat{LaTeX2e}
@@ -22,7 +22,7 @@
 
 % additional options passed to `scrartcl` class
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{scrartcl}}
-\PassOptionsToClass{DIV=14,11pt,a4paper,parskip=half*}{scrartcl}
+\PassOptionsToClass{DIV=14,12pt,a4paper,parskip=half*}{scrartcl}
 
 \ProcessOptions
 \LoadClass{scrartcl}
@@ -153,8 +153,8 @@
 \NewDocumentCommand \mscaidentifier { m } {\def\@mscaidentifier{#1}}
 \NewDocumentCommand \mscaproject { m } {\def\@mscaproject{#1}}
 
-\def\@mscaidentifier{HORIZON-MSCA-2025-PF-01}
-\def\@mscaproject{MSCA Postdoctoral Fellowships 2025}
+\def\@mscaidentifier{HORIZON-MSCA-2026-PF-01}
+\def\@mscaproject{MSCA Postdoctoral Fellowships 2026}
 
 \def\callihead{\textnormal{\scriptsize Call: \@mscaidentifier: \@mscaproject}\vspace{\baselineskip}}
 \def\callohead{\textnormal{\scriptsize \textcolor{MSCATagGray}{

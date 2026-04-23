@@ -88,7 +88,8 @@ following commands are mandatory:
 * `mscaproject`: the acronym for the project.
 
 Additionally, there are also some commands to help constructing the CV and other
-little tables in the submission:
+little tables in the submission. The CV, in particular, has no recommended
+structure, so you are welcome to use these or set up your own preferred formatting.
 
 * `mscaorgoverview`: an environment (wrapper around `tabular`) that defines
   the table template from Section 5.1 for participating organisations. This is a

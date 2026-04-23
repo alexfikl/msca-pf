@@ -98,6 +98,8 @@
 
 % <<< general formatting
 
+\definecolor{MSCAHeaderGray}{RGB}{180, 180, 180}
+
 % make links a bit less intrusive
 \hypersetup{
     colorlinks=true,
@@ -140,14 +142,6 @@
 
 % >>>
 
-% <<< tags
-
-\definecolor{MSCATagGray}{RGB}{180, 180, 180}
-\NewDocumentCommand \mscatag { m } {\textcolor{MSCATagGray}{\normalfont\scriptsize\sffamily \#@#1@\#}}
-\NewDocumentCommand \mscatagend { m } {\noindent \textcolor{MSCATagGray}{\normalfont\scriptsize\sffamily \#§#1§\#}}
-
-% >>>
-
 % <<< page header/footer styles
 
 \NewDocumentCommand \mscaidentifier { m } {\def\@mscaidentifier{#1}}
@@ -157,7 +151,7 @@
 \def\@mscaproject{MSCA Postdoctoral Fellowships 2026}
 
 \def\callihead{\textnormal{\scriptsize Call: \@mscaidentifier: \@mscaproject}\vspace{\baselineskip}}
-\def\callohead{\textnormal{\scriptsize \textcolor{MSCATagGray}{
+\def\callohead{\textnormal{\scriptsize \textcolor{MSCAHeaderGray}{
     EU Grants: Application form (HE MSCA PF) V\mscaversion \\
     \draftheader
     }

@@ -43,7 +43,7 @@ well. However, the sections themselves (and some tables) should stay in the
 given format and location.
 
 Finally, as the documents themselves mention at the start: when in doubt,
-always consult the official documentation!
+always consult (and prefer) the official documentation!
 
 Compilation
 -----------

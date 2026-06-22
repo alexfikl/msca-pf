@@ -18,7 +18,7 @@ jobs:
     name: Spelling (typos)
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v6
+    - uses: actions/checkout@v7
     - uses: crate-ci/typos@master
 
   build:
@@ -30,7 +30,7 @@ jobs:
         texlive_version: ['2024', '2025', '2026']
 
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - name: Compile LaTeX template
         uses: xu-cheng/latex-action@v4
         with:

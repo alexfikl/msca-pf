@@ -40,6 +40,7 @@
 
 % build fancy table required for organization description
 \RequirePackage{array}
+\RequirePackage[shortlabels]{enumitem}
 \RequirePackage[table]{xcolor}
 \RequirePackage{longtable}
 % customize page numbering
@@ -169,7 +170,6 @@
 
 % <<< title
 
-\makeatletter
 \def\@maketitle{
 \if@draftproposal\begin{nolinenumbers}\fi
 {
@@ -181,7 +181,20 @@
 }
 \if@draftproposal\end{nolinenumbers}\fi
 }
-\makeatother
+
+% >>>
+
+% <<< comments
+
+\if@draftproposal
+    \newenvironment{mscaexplanation}{
+        \begingroup
+    }{
+        \endgroup
+    }
+\else
+    \newenvironment{mscaexplanation}{\setbox\z@\vbox\bgroup}{\egroup}
+\fi
 
 % >>>
 
@@ -205,7 +218,7 @@
 \end{longtable}
 }
 
-\newenvironment{mscaorgoverview}[1]{
+\newenvironment{mscaorgoverview}{
 \begin{msctable}{
     |>{\ra}p{0.165\linewidth}
     |>{\ra}p{0.075\linewidth}
@@ -220,8 +233,7 @@
 \textbf{Legal Entity Short Name} &
 \textbf{Academic Organisation (Y/N)} &
 \textbf{Country} &
-\textbf{Name of Supervisor} \\
-\hline
+\textbf{Name of Supervisor} \\\hline
 }{
 \hline
 \end{msctable}

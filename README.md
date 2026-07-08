@@ -38,9 +38,10 @@ To use this template, you essentially just need 3 files: `msca-pf.cls`,
   `project-acronym-b1.tex`.
 
 The two templates for Part B1 and B2 contain a lot of text used to describe
-what the various sections should contain. This should, of course, be deleted as
-well. However, the sections themselves (and some tables) should stay in the
-given format and location.
+what the various sections should present. This should, of course, not be part
+of the final proposal and is automatically removed when removing the
+`draftproposal` option. However, the sections themselves (and some tables)
+should stay in the given format and location.
 
 Finally, as the documents themselves mention at the start: when in doubt,
 always consult (and prefer) the official documentation!
@@ -77,8 +78,8 @@ The class has two options meant for drafting:
 
 * `layoutgrid`: overlays a grid on top of each page to check margins and
   other alignment issues.
-* `draftproposal`: adds helpful drafting options, such as line numbers and
-  a time stamp.
+* `draftproposal`: adds helpful drafting options, such as line numbers,
+  time stamps, section documentation, etc.
 
 It also provides a few useful commands that can be used in the proposal. The
 following commands are mandatory:

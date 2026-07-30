@@ -26,7 +26,9 @@ format: yamlfmt mdformat justfmt
 
 [doc("Format tex files with badness")]
 texfmt:
-    badness format template.tex uvt-letterhead.sty
+    badness format --wrap stable --math-wrap preserve --indent-width 4 \
+        msca-pf-part-b1-template.tex \
+        msca-pf-part-b2-template.tex
     @echo -e "\e[1;32mbadness clean!\e[0m"
 
 [doc("Format YAML files with yamlfmt")]

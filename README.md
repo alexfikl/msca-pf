@@ -47,6 +47,7 @@ exactly. They require a page size of A4, margins of at least 15mm and a font siz
 of at least 11pt. In this template, we use **12pt** fonts to match the official
 template and the margins are more towards **20mm** (using KOMA Script's `DIV=15`
 setting). To force the minimal requirements, set the `minimal` option as below
+
 ```tex
 \documentclass[minimal,draftproposal]{msca-pf}
 ```

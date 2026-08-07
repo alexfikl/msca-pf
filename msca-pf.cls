@@ -2,7 +2,7 @@
 
 \def\mscaversion{5.0}
 \def\fileversion{v\mscaversion}
-\def\filedate{2026/04/15}
+\def\filedate{2026/08/07}
 \def\clsname{msca-pf}
 
 \NeedsTeXFormat{LaTeX2e}

@@ -20,9 +20,13 @@
 \newif\if@layoutgrid \@layoutgridfalse
 \DeclareOption{layoutgrid}{\@layoutgridtrue}
 
+% draft features
+\newif\if@minimal \@minimalfalse
+\DeclareOption{minimal}{\@minimaltrue}
+
 % additional options passed to `scrartcl` class
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{scrartcl}}
-\PassOptionsToClass{DIV=14,12pt,a4paper,parskip=half*}{scrartcl}
+\PassOptionsToClass{DIV=15,12pt,a4paper,parskip=half*}{scrartcl}
 
 \ProcessOptions
 \LoadClass{scrartcl}
@@ -84,6 +88,20 @@
         subgridcolor=gray!70,
         texcoord]{eso-pic}
     \usepackage{showframe}
+\fi
+
+% force minimal page requirements
+\if@minimal
+    \KOMAoptions{fontsize=11pt}
+    \usepackage[
+        top=15mm,
+        bottom=15mm,
+        left=15mm,
+        right=15mm,
+        headsep=2mm,
+        footskip=16mm,
+        includefoot,
+    ]{geometry}
 \fi
 
 \AtBeginDocument{

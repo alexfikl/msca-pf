@@ -42,6 +42,15 @@ of the final proposal and is automatically removed when removing the
 `draftproposal` option. However, the sections themselves (and some tables)
 should stay in the given format and location.
 
+**Warning**: We do not follow the minimal requirements from the MSCA manual
+exactly. They require a page size of A4, margins of at least 15mm and a font size
+of at least 11pt. In this template, we use **12pt** fonts to match the official
+template and the margins are more towards **20mm** (using KOMA Script's `DIV=15`
+setting). To force the minimal requirements, set the `minimal` option as below
+```tex
+\documentclass[minimal,draftproposal]{msca-pf}
+```
+
 Finally, as the documents themselves mention at the start: when in doubt,
 always consult (and prefer) the official documentation!
 
@@ -77,6 +86,8 @@ The class has two options meant for drafting:
 
 - `layoutgrid`: overlays a grid on top of each page to check margins and
   other alignment issues.
+- `minimal`: use minimal MSCA formatting requirements (11pt fonts, 15mm margins),
+  instead of the larger defaults.
 - `draftproposal`: adds helpful drafting options, such as line numbers,
   time stamps, section documentation, etc.
 

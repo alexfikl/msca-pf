@@ -172,9 +172,10 @@
 \addtokomafont{disposition}{\rmfamily}
 
 % tighted sections a bit for more space
-\RedeclareSectionCommand[beforeskip=0.5em, afterskip=0.5em, font=\large\bfseries\itshape]{section}
-\RedeclareSectionCommand[beforeskip=0.5em, afterskip=0.5em, font=\normalsize\bfseries\itshape]{subsection}
-\RedeclareSectionCommand[beforeskip=0.25em, afterskip=0.25em, font=\normalsize\bfseries\itshape]{subsubsection}
+% NOTE: this is uglier, but seems to work with tagging (which KOMA-Script does not support)
+\renewcommand\section{\@startsection{section}{1}{\z@}{0.5em}{0.5em}{\large\bfseries\itshape}}
+\renewcommand\subsection{\@startsection{subsection}{2}{\z@}{0.5em}{0.5em}{\normalsize\bfseries\itshape}}
+\renewcommand\subsubsection{\@startsection{subsubsection}{3}{\z@}{0.25em}{0.25em}{\normalsize\bfseries\itshape}}
 
 % FIXME: this is a bit of a hack, figure out a better place to put them
 \setlength{\footskip}{25pt}

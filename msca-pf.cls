@@ -48,7 +48,6 @@
 
 % build fancy table required for organization description
 \RequirePackage{array}
-\RequirePackage[shortlabels]{enumitem}
 \RequirePackage[table]{xcolor}
 \RequirePackage{longtable}
 % customize page numbering

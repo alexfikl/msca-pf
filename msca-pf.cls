@@ -77,10 +77,14 @@
 
 % add line numbers if in draft mode
 \if@draftproposal
-    \RequirePackage[mathlines]{lineno}
-    \RenewDocumentCommand \linenumberfont {} {
-        \normalfont\footnotesize\textcolor{black!50}
-    }
+    \if@tagged
+        \RequirePackage{lualineno}
+    \else
+        \RequirePackage[mathlines]{lineno}
+        \RenewDocumentCommand \linenumberfont {} {
+            \normalfont\footnotesize\textcolor{black!50}
+        }
+    \fi
 \fi
 
 % enable this to better check sizing
@@ -113,7 +117,19 @@
     \bookmarksetup{numbered}
 
     \if@draftproposal
-        \linenumbers
+        \if@tagged
+            \newcounter{lineno}
+            \lualineno{
+                define = {
+                    name = default
+                    toks = {\stepcounter{lineno}}
+                    left = {\normalfont\footnotesize\textcolor{black!50}{\thelineno}\kern1em}
+                }
+                set = default
+            }
+        \else
+            \linenumbers
+        \fi
     \fi
 }
 
@@ -193,15 +209,11 @@
 % <<< title
 
 \def\@maketitle{
-\if@draftproposal\begin{nolinenumbers}\fi
-{
     \null
     \centering
     \vspace{-\baselineskip}
     {\huge \bfseries \@title \par}
     \vspace{\baselineskip}
-}
-\if@draftproposal\end{nolinenumbers}\fi
 }
 
 % >>>

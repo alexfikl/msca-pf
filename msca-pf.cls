@@ -20,9 +20,13 @@
 \newif\if@layoutgrid \@layoutgridfalse
 \DeclareOption{layoutgrid}{\@layoutgridtrue}
 
-% draft features
+% minimal margins and fonts
 \newif\if@minimal \@minimalfalse
 \DeclareOption{minimal}{\@minimaltrue}
+
+% enable tagging features
+\newif\if@tagged \@taggedfalse
+\DeclareOption{tagged}{\@taggedtrue}
 
 % additional options passed to `scrartcl` class
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{scrartcl}}

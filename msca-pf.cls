@@ -278,7 +278,7 @@
 
 % NOTE: This can contain a lot of text, so we make it long by default
 \newenvironment{mscaorgcapacity}{
-\if@tagged\tagpdfsetup{table/tagging=true, table/header-columns={1}}\if
+\if@tagged\tagpdfsetup{table/tagging=true, table/header-columns={1}}\fi
 \begin{msclongtable}{
     |>{\ra}p{0.3\linewidth}
     |>{\ra}p{0.646\linewidth}|}
@@ -293,6 +293,7 @@
 % <<< cv
 
 \newenvironment{cvitem}{
+\if@tagged\tagpdfsetup{table/tagging=presentation}\fi
 \noindent \begin{tabular}{@{}>{\ra}p{0.18\linewidth}>{\ra}p{0.8\linewidth}}
 }{
 \end{tabular}

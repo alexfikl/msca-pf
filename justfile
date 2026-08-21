@@ -59,6 +59,17 @@ badness:
     badness lint msca-pf-part-b1-template.tex msca-pf-part-b2-template.tex
     @echo -e "\e[1;32mbadness clean!\e[0m"
 
+[doc("Check PDF/UA2 compliace with verapdf")]
+ua:
+    verapdf \
+        --flavour ua2 --format html --progress --success \
+        msca-pf-part-b1-template.pdf > msca-pf-part-b1-template.html
+    @echo -e "\e[1;32mGenerated 'msca-pf-part-b1-template.html'!\e[0m"
+    verapdf \
+        --flavour ua2 --format html --progress --success \
+        msca-pf-part-b2-template.pdf > msca-pf-part-b2-template.html
+    @echo -e "\e[1;32mGenerated 'msca-pf-part-b2-template.html'!\e[0m"
+
 # }}}
 
 # {{{ develop

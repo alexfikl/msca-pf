@@ -63,8 +63,8 @@ compliance. We currently pass the checks from [veraPDF](https://verapdf.org/),
 but this is not sufficient for full compliance. The tagged build requires a
 pretty modern LaTeX toolchain:
 
-- TeXLive 2025+, the newer the better (Overleaf has TeXLive 2026).
-- LuaLaTeX. PDFLaTeX and XeLaTeX cannot produce the required tagged PDFs. Note
+- **TeXLive 2025+**, the newer the better (Overleaf has TeXLive 2026).
+- **LuaLaTeX**. PDFLaTeX and XeLaTeX cannot produce the required tagged PDFs. Note
   that PDFLaTeX can produce PDF/UA1 documents, but it cannot emit the PDF2.0
   documents required for PDF/UA2.
 

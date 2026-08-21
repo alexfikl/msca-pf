@@ -214,7 +214,10 @@
     \null
     \centering
     \vspace{-\baselineskip}
-    {\huge \bfseries \@title \par}
+    {\huge \bfseries
+        \if@tagged\tagstructbegin{tag=Title}\fi
+        \@title \par
+        \if@tagged\tagstructend\fi}
     \vspace{\baselineskip}
 }
 

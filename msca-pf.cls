@@ -123,7 +123,7 @@
                 define = {
                     name = default
                     toks = {\stepcounter{lineno}}
-                    left = {\normalfont\footnotesize\textcolor{black!50}{\thelineno}\kern1em}
+                    left = {\SuspendTagging{lineno}\normalfont\footnotesize\textcolor{black!50}{\thelineno}\kern1em\ResumeTagging{lineno}}
                 }
                 set = default
             }

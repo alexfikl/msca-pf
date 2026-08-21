@@ -1,16 +1,25 @@
 % badness-ignore-file unreferenced-label
 % badness-ignore-file hard-coded-reference
 
-\documentclass[12pt,draftproposal]{msca-pf}
+% DocumentMetadata is required for an accessible PDF
+\DocumentMetadata{
+    lang=en,
+    pdfstandard=ua-2,
+    tagging=on,
+    testphase={phase-II,table,firstaid},
+    tagging-setup={
+        math/setup={mathml-AF,mathml-SE},
+        extra-modules={verbatim-mo},
+    }
+}
+
+\documentclass[12pt,tagged,draftproposal]{msca-pf}
 
 % {{{ packages
 
 % better environments
 \usepackage[nameinlink, noabbrev]{cleveref}
-\usepackage[shortlabels]{enumitem}
 \usepackage{booktabs}
-\usepackage{caption}
-\usepackage{subcaption}
 
 % better typography
 \usepackage[activate={true,nocompatibility}, tracking=true]{microtype}
@@ -68,7 +77,8 @@ the ones provided in Part A (if applicable).
 
 At a minimum, the CV should contain:
 
-\begin{enumerate}[a)]
+\begin{enumerate}
+    \renewcommand{\labelenumi}{\alph{enumi})}
     \item The name of the researcher;
     \item Professional experience (most recent first, with exact dates in format
     dd/mm/yyyy);

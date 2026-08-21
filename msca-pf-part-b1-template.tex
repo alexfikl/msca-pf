@@ -1,15 +1,25 @@
 % badness-ignore-file unreferenced-label
 % badness-ignore-file hard-coded-reference
 
-\documentclass[12pt,draftproposal]{msca-pf}
+% DocumentMetadata is required for an accessible PDF
+\DocumentMetadata{
+    lang=en,
+    pdfstandard=ua-2,
+    tagging=on,
+    testphase={table,firstaid},
+    tagging-setup={
+        math/setup={mathml-AF,mathml-SE},
+        extra-modules={verbatim-mo},
+    }
+}
+
+\documentclass[12pt,tagged,draftproposal]{msca-pf}
 
 % {{{ packages
 
 % better environments
 \usepackage[nameinlink, noabbrev]{cleveref}
 \usepackage{booktabs}
-\usepackage{caption}
-\usepackage{subcaption}
 
 % better typography
 \usepackage[activate={true,nocompatibility}, tracking=true]{microtype}

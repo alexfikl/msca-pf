@@ -55,6 +55,35 @@ setting). To force the minimal requirements, set the `minimal` option as below
 Finally, as the documents themselves mention at the start: when in doubt,
 always consult (and prefer) the official documentation!
 
+## Tagging (PDF/UA2 Compliance)
+
+By default, the current templates use the new LaTeX Tagging infrastructure to
+produce PDFs that are a first step towards UA2 (Universal Accessibility) standard
+compliance. We currently pass the checks from [veraPDF](https://verapdf.org/),
+but this is not sufficient for full compliance. The tagged build requires a
+pretty modern LaTeX toolchain:
+
+- TeXLive 2025+, the newer the better (Overleaf has TeXLive 2026).
+- LuaLaTeX. PDFLaTeX and XeLaTeX cannot produce the required tagged PDFs. Note
+  that PDFLaTeX can produce PDF/UA1 documents, but it cannot emit the PDF2.0
+  documents required for PDF/UA2.
+
+Other things to keep in mind when using tagged PDFs:
+
+- Many common packages do not work with tagging. See the
+  [official Tagging Status page](https://latex3.github.io/tagging-project/tagging-status/)
+  for the compatibility status for most packages. Note that incompatible
+  packages will still work most of the time, but they will not produce PDFs that
+  can actually be used by screen readers or other accessibility software.
+- There are strict requirements around figures and tables that need to be followed.
+  See the [official documentation](https://latex3.github.io/tagging-project/documentation/usage-instructions)
+  and [Overleaf's documentation](https://docs.overleaf.com/writing-and-editing/creating-accessible-pdfs)
+  for more information on the various problems.
+
+The tagged build should be easy to disable. You must delete the `\DocumentMetadata`
+command at the top of the template files and remove the `tagged` argument
+from the document class command.
+
 ## Compilation
 
 The resulting PDF files are included for easy viewing. The template is compatible
@@ -64,6 +93,9 @@ with both PDFLaTeX and LuaLaTeX/XeLaTeX. It can be easily build with e.g. `latex
 latexmk -pdflua msca-pf-part-b1-template.tex
 latexmk -pdflua msca-pf-part-b2-template.tex
 ```
+
+**NOTE**: To build with PDFLaTeX or XeLaTeX, the tagging instructions must be
+turned off. We recommend using LuaLaTeX whenever possible for this reason.
 
 ## Documentation
 
@@ -83,14 +115,16 @@ be used as
 \end{document}
 ```
 
-The class has two options meant for drafting:
+The class has several options to control its behavior:
 
-- `layoutgrid`: overlays a grid on top of each page to check margins and
-  other alignment issues.
+- `tagged`: enable PDF/UA2 tagging for the environments defined by the class.
+  This requires the `\DocumentMetadata` command to be used in the document.
 - `minimal`: use minimal MSCA formatting requirements (11pt fonts, 15mm margins),
   instead of the larger defaults.
 - `draftproposal`: adds helpful drafting options, such as line numbers,
   time stamps, section documentation, etc.
+- `layoutgrid`: overlays a grid on top of each page to check margins and
+  other alignment issues.
 
 It also provides a few useful commands that can be used in the proposal. The
 following commands are mandatory:

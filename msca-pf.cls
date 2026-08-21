@@ -77,7 +77,11 @@
 % add line numbers if in draft mode
 \if@draftproposal
     \if@tagged
-        \RequirePackage{lualineno}
+        \ifpdftex
+            \PackageWarning{msca-pf}{Cannot show line numbers on PDFLaTeX with tagging enabled}
+        \else
+            \RequirePackage{lualineno}
+        \fi
     \else
         \RequirePackage[mathlines]{lineno}
         \RenewDocumentCommand \linenumberfont {} {
@@ -116,7 +120,7 @@
     \bookmarksetup{numbered}
 
     \if@draftproposal
-        \if@tagged
+        \if@tagged\ifpdftex\else
             % NOTE: for information on how to set this up for tagging see
             % https://mirrors.nxthost.com/ctan/macros/luatex/generic/lualineno/lualineno-doc.pdf
             \newcounter{lineno}
@@ -128,6 +132,7 @@
                 }
                 set = default
             }
+        \fi
         \else
             \linenumbers
         \fi

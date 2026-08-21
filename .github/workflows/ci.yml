@@ -16,9 +16,30 @@ jobs:
     steps:
       - uses: actions/checkout@v7
       - uses: crate-ci/typos@master
-
   build:
     name: Build (${{ matrix.engine }}-${{ matrix.texlive_version }})
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        engine: ['pdflatex', 'lualatex']
+    steps:
+      - uses: actions/checkout@v7
+      - name: Disable tagging
+        run: |
+          sed -i 's/,tagged//' \
+            msca-pf-part-b1-template.tex msca-pf-part-b2-template.tex
+          sed -i '/\DocumentMetadata{/,/^}$/d' \
+            msca-pf-part-b1-template.tex msca-pf-part-b2-template.tex
+      - name: Compile LaTeX template
+        uses: xu-cheng/latex-action@v4
+        with:
+          root_file: |
+            msca-pf-part-b1-template.tex
+            msca-pf-part-b2-template.tex
+          texlive_version: 2024
+          latexmk_use_lualatex: ${{ matrix.engine == 'lualatex' }}
+  build-tagged:
+    name: Build (${{ matrix.engine }}-${{ matrix.texlive_version }}-tagged)
     runs-on: ubuntu-latest
     strategy:
       matrix:

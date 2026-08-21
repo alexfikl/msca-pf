@@ -16,6 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v7
       - uses: crate-ci/typos@master
+
   build:
     name: Build (${{ matrix.engine }}-${{ matrix.texlive_version }})
     runs-on: ubuntu-latest

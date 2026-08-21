@@ -118,6 +118,8 @@
 
     \if@draftproposal
         \if@tagged
+            % NOTE: for information on how to set this up for tagging see
+            % https://mirrors.nxthost.com/ctan/macros/luatex/generic/lualineno/lualineno-doc.pdf
             \newcounter{lineno}
             \lualineno{
                 define = {
@@ -253,6 +255,7 @@
 }
 
 \newenvironment{mscaorgoverview}{
+\if@tagged\tagpdfsetup{table/tagging=true, table/header-rows={1}}\fi
 \begin{msctable}{
     |>{\ra}p{0.165\linewidth}
     |>{\ra}p{0.075\linewidth}
@@ -275,6 +278,7 @@
 
 % NOTE: This can contain a lot of text, so we make it long by default
 \newenvironment{mscaorgcapacity}{
+\if@tagged\tagpdfsetup{table/tagging=true, table/header-columns={1}}\if
 \begin{msclongtable}{
     |>{\ra}p{0.3\linewidth}
     |>{\ra}p{0.646\linewidth}|}

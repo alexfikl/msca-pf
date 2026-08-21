@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        engine: ['lualatex']
+        engine: ['pdflatex', 'lualatex']
         texlive_version: ['2025', '2026']
     steps:
       - uses: actions/checkout@v7

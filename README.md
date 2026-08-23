@@ -1,6 +1,7 @@
 # MSCA-PF: LaTeX Template
 
 [![GitHub Actions Workflow Status](https://github.com/alexfikl/msca-pf/actions/workflows/ci.yml/badge.svg)](https://github.com/alexfikl/msca-pf/actions/workflows/ci.yml)
+[![veraPDF Compliance](https://img.shields.io/badge/PDF%2FUA--2-Verified_with_veraPDF-blue)](https://verapdf.org/home)
 [![Open in Overleaf](https://img.shields.io/static/v1?label=LaTeX&message=Open-in-Overleaf&color=47a141&style=flat&logo=overleaf)](https://www.overleaf.com/docs?snip_uri=https://github.com/alexfikl/msca-pf/archive/refs/heads/main.zip)
 
 > [!NOTE]

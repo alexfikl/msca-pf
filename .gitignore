@@ -1,3 +1,6 @@
+*.xml
+*.html
+
 ## temporary files
 *~
 *.swp

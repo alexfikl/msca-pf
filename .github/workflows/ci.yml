@@ -26,10 +26,8 @@ jobs:
       - uses: actions/checkout@v7
       - name: Disable tagging
         run: |
-          sed -i 's/,tagged//' \
-            msca-pf-part-b1-template.tex msca-pf-part-b2-template.tex
-          sed -i '/\DocumentMetadata{/,/^}$/d' \
-            msca-pf-part-b1-template.tex msca-pf-part-b2-template.tex
+          sed -i 's/,tagged//' msca-pf-part-b1-template.tex msca-pf-part-b2-template.tex
+          sed -i '/\DocumentMetadata{/,/^}$/d' msca-pf-part-b1-template.tex msca-pf-part-b2-template.tex
       - name: Compile LaTeX template
         uses: xu-cheng/latex-action@v4
         with:
@@ -47,6 +45,7 @@ jobs:
         texlive_version: ['2025', '2026']
     steps:
       - uses: actions/checkout@v7
+      - uses: extractions/setup-just@v4
       - name: Compile LaTeX template
         uses: xu-cheng/latex-action@v4
         with:
@@ -55,3 +54,26 @@ jobs:
             msca-pf-part-b2-template.tex
           texlive_version: ${{ matrix.texlive_version }}
           latexmk_use_lualatex: ${{ matrix.engine == 'lualatex' }}
+      - name: Install veraPDF
+        if: matrix.engine == 'lualatex'
+        uses: conda-incubator/setup-miniconda@v4
+        with:
+          activate-environment: test
+          environment-file: ./.github/verapdf-environment.yml
+          miniforge-version: latest
+      - name: Validate UA-2 and A-4f
+        if: matrix.engine == 'lualatex'
+        shell: bash -l {0}
+        run: |
+          just ua
+      - name: Validate WCAG 2.2
+        if: matrix.engine == 'lualatex'
+        shell: bash -l {0}
+        run: |
+          just wcag
+      - name: Generate reports
+        if: matrix.engine == 'lualatex'
+        shell: bash -l {0}
+        run: |
+          python3 .github/verapdf-summary.py \
+            template-pdf-ua-2.html template-wcag-2-2.html >> "$GITHUB_STEP_SUMMARY"

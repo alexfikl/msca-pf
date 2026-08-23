@@ -1,0 +1,5 @@
+name: veraPDF
+channels:
+  - conda-forge
+dependencies:
+  - verapdf

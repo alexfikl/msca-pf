@@ -5,7 +5,7 @@
 [![Open in Overleaf](https://img.shields.io/static/v1?label=LaTeX&message=Open-in-Overleaf&color=47a141&style=flat&logo=overleaf)](https://www.overleaf.com/docs?snip_uri=https://github.com/alexfikl/msca-pf/archive/refs/heads/main.zip)
 
 > [!NOTE]
-> This is an unofficial template based on the templates provided by the MSCA-PF
+> This is an **unofficial template** based on the templates provided by the MSCA-PF
 > program (originally in the RTF format). Proposals based on this template have
 > been successfully submitted in 2022 and 2024 (to my knowledge). Newer
 > versions of this template are available and reporting any discrepancies is
@@ -56,17 +56,19 @@ setting). To force the minimal requirements, set the `minimal` option as below
 Finally, as the documents themselves mention at the start: when in doubt,
 always consult (and prefer) the official documentation!
 
-## Tagging (PDF/UA2 Compliance)
+## Tagging (PDF/UA-2 Compliance)
 
-By default, the current templates use the new LaTeX Tagging infrastructure to
-produce PDFs that are a first step towards UA2 (Universal Accessibility) standard
-compliance. We currently pass the checks from [veraPDF](https://verapdf.org/),
-but this is not sufficient for full compliance. The tagged build requires a
-pretty modern LaTeX toolchain:
+By default, the current templates use the new [LaTeX
+Tagging](https://latex3.github.io/tagging-project/) infrastructure to produce
+more accessible PDFs (using the PDF/UA-2 standard for Universal Accessibility).
+We currently pass the checks from [veraPDF](https://verapdf.org/), but this is
+not sufficient for full compliance (i.e. some aspects cannot be checked
+automatically, such as image contrast). The accessible build requires a pretty
+modern LaTeX toolchain:
 
 - **TeXLive 2025+**, the newer the better (Overleaf has TeXLive 2026).
 - **LuaLaTeX**. PDFLaTeX and XeLaTeX cannot produce the required tagged PDFs. Note
-  that PDFLaTeX can produce PDF/UA2 documents, they do not pass the veraPDF checks
+  that PDFLaTeX can produce PDF/UA-2 documents, they do not pass the veraPDF checks
   at this point.
 
 Other things to keep in mind when using tagged PDFs:
@@ -118,7 +120,7 @@ be used as
 
 The class has several options to control its behavior:
 
-- `tagged`: enable PDF/UA2 tagging for the environments defined by the class.
+- `tagged`: enable PDF/UA-2 tagging for the environments defined by the class.
   This requires the `\DocumentMetadata` command to be used in the document.
 - `minimal`: use minimal MSCA formatting requirements (11pt fonts, 15mm margins),
   instead of the larger defaults.

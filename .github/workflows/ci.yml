@@ -75,5 +75,11 @@ jobs:
         if: matrix.engine == 'lualatex'
         shell: bash -l {0}
         run: |
+          echo "# msca-pf-part-b1-template.pdf" >> "$GITHUB_STEP_SUMMARY"
           python3 .github/verapdf-summary.py \
-            template-pdf-ua-2.html template-wcag-2-2.html >> "$GITHUB_STEP_SUMMARY"
+            msca-pf-part-b1-template-pdf-ua-2.html msca-pf-part-b1-template-wcag-2-2.html \
+            >> "${GITHUB_STEP_SUMMARY}"
+          echo "# msca-pf-part-b2-template.pdf" >> "$GITHUB_STEP_SUMMARY"
+          python3 .github/verapdf-summary.py \
+            msca-pf-part-b2-template-pdf-ua-2.html msca-pf-part-b2-template-wcag-2-2.html \
+            >> "${GITHUB_STEP_SUMMARY}"

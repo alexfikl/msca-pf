@@ -58,7 +58,7 @@ jobs:
         if: matrix.engine == 'lualatex'
         uses: conda-incubator/setup-miniconda@v4
         with:
-          activate-environment: test
+          activate-environment: veraPDF
           environment-file: ./.github/verapdf-environment.yml
           miniforge-version: latest
       - name: Validate UA-2 and A-4f

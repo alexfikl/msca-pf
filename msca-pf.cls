@@ -57,6 +57,33 @@
 
 % >>>
 
+% <<< tagging
+
+% warn about tagging before we start
+\if@tagged
+    \ifluatex\else
+        \PackageWarning{erc-stg}{The 'tagged' option is not fully supported with pdfLaTeX and will not currently produce veraPDF-clean PDF/UA-2 output. Compile with LuaLaTeX (TeX Live 2025+) for tagged PDFs}
+    \fi
+\fi
+
+% provide the tagging commands used by the class.
+\ifdefined\tagpdfstructbegin
+    \let\tagstructbegin\tagpdfstructbegin
+    \let\tagstructend\tagpdfstructend
+\fi
+\providecommand{\tagstructbegin}[1]{}
+\providecommand{\tagstructend}{}
+
+% custom roles
+\if@tagged
+    \tagpdfsetup{
+        role/new-tag = {tag=erc-stg-comment, role=Div},
+        role/new-tag = {tag=erc-stg-cvitem, role=Div},
+    }
+\fi
+
+% >>>
+
 % <<< process options
 
 \if@draftproposal
@@ -76,18 +103,12 @@
 
 % add line numbers if in draft mode
 \if@draftproposal
-    \if@tagged
-        \ifpdftex
-            \PackageWarning{msca-pf}{Cannot show line numbers on PDFLaTeX with tagging enabled}
-        \else
-            \RequirePackage{lualineno}
-        \fi
-    \else
-        \RequirePackage[mathlines]{lineno}
-        \RenewDocumentCommand \linenumberfont {} {
-            \normalfont\footnotesize\textcolor{black!50}
-        }
-    \fi
+    % NOTE: lineno is not compatible with tagging, but this is just meant for
+    % drafting, not the final document, so it should be fine for now
+    \RequirePackage[mathlines]{lineno}
+    \RenewDocumentCommand \linenumberfont {} {
+        \normalfont\footnotesize\textcolor{black!50}
+    }
 \fi
 
 % enable this to better check sizing
@@ -120,22 +141,7 @@
     \bookmarksetup{numbered}
 
     \if@draftproposal
-        \if@tagged\ifpdftex\else
-            % NOTE: for information on how to set this up for tagging see
-            % https://mirrors.nxthost.com/ctan/macros/luatex/generic/lualineno/lualineno-doc.pdf
-            \newcounter{lineno}
-            \lualineno{
-                define = {
-                    name = default
-                    toks = {\stepcounter{lineno}}
-                    left = {\SuspendTagging{lineno}\normalfont\footnotesize\textcolor{black!50}{\thelineno}\kern1em\ResumeTagging{lineno}}
-                }
-                set = default
-            }
-        \fi
-        \else
-            \linenumbers
-        \fi
+        \linenumbers
     \fi
 }
 
@@ -220,9 +226,9 @@
     \centering
     \vspace{-\baselineskip}
     {\huge \bfseries
-        \if@tagged\tagstructbegin{tag=Title}\fi
+        \tagstructbegin{tag=Title}
         \@title \par
-        \if@tagged\tagstructend\fi}
+        \tagstructend}
     \vspace{\baselineskip}
 }
 
@@ -232,9 +238,11 @@
 
 \if@draftproposal
     \newenvironment{mscaexplanation}{
+        \tagstructbegin{tag=erc-stg-comment}%
         \begingroup
     }{
         \endgroup
+        \tagstructend
     }
 \else
     \newenvironment{mscaexplanation}{\setbox\z@\vbox\bgroup}{\egroup}
@@ -301,10 +309,12 @@
 % <<< cv
 
 \newenvironment{cvitem}{
+\tagstructbegin{tag=erc-stg-cvitem}
 \if@tagged\tagpdfsetup{table/tagging=presentation}\fi
 \noindent \begin{tabular}{@{}>{\ra}p{0.18\linewidth}>{\ra}p{0.8\linewidth}}
 }{
 \end{tabular}
+\tagstructend
 }
 
 % NOTE: \cventry{dates}{name}{details}{location}

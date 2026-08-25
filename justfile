@@ -74,7 +74,7 @@ ua format="html":
 [private]
 wcag_check basename format:
     verapdf --profile .WCAG-2-2-Complete-PDF20.xml --progress \
-        --format {{ format }} {{basename}}.pdf > {{ basename }}-wcag-2-2.{{ format }}
+        --format {{ format }} {{ basename }}.pdf > {{ basename }}-wcag-2-2.{{ format }}
     @echo -e "\e[1;32mGenerated '{{ basename }}-wcag-2-2.{{ format }}'!\e[0m"
 
 [doc("Check WCAG 2.2 compliance with verapdf")]

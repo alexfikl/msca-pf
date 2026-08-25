@@ -59,6 +59,14 @@
 
 % <<< tagging
 
+% disable tagging if DocumentMetadata is not provided in the document
+\if@tagged
+    \ifdefined\DocumentMetadata\else
+        \@taggedfalse
+        \PackageWarning{msca-pf}{The 'tagged' option requires the \string\DocumentMetadata\space command to be used before \string\documentclass. Tagging is now disabled}
+    \fi
+\fi
+
 % warn about tagging before we start
 \if@tagged
     \ifluatex\else

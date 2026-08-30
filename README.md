@@ -56,7 +56,11 @@ setting). To force the minimal requirements, set the `minimal` option as below
 Finally, as the documents themselves mention at the start: when in doubt,
 always consult (and prefer) the official documentation!
 
-## Tagging (PDF/UA-2 Compliance)
+## Accessibility (PDF/UA-2 Compliance)
+
+> [!NOTE]
+> Accessibility support (PDF/UA-2) is enabled automatically whenever
+> `\DocumentMetadata` is provided before `\documentclass` in the templates.
 
 By default, the current templates use the new [LaTeX
 Tagging](https://latex3.github.io/tagging-project/) infrastructure to produce
@@ -83,11 +87,14 @@ Other things to keep in mind when using tagged PDFs:
   and [Overleaf's documentation](https://docs.overleaf.com/writing-and-editing/creating-accessible-pdfs)
   for more information on the various problems.
 
-The tagged build should be easy to disable. You must delete the `\DocumentMetadata`
-command at the top of the template files and remove the `tagged` argument
-from the document class command.
+The tagged build should be easy to disable. You only need to delete or
+comment out the `\DocumentMetadata` command at the top of the template files.
 
 ## Compilation
+
+> [!NOTE]
+> To build with PDFLaTeX or XeLaTeX, the accessibility setup must be turned
+> off. We recommend using LuaLaTeX whenever possible for this reason.
 
 The resulting PDF files are included for easy viewing. The template is compatible
 with both PDFLaTeX and LuaLaTeX/XeLaTeX. It can be easily build with e.g. `latexmk`
@@ -96,9 +103,6 @@ with both PDFLaTeX and LuaLaTeX/XeLaTeX. It can be easily build with e.g. `latex
 latexmk -pdflua msca-pf-part-b1-template.tex
 latexmk -pdflua msca-pf-part-b2-template.tex
 ```
-
-**NOTE**: To build with PDFLaTeX or XeLaTeX, the tagging instructions must be
-turned off. We recommend using LuaLaTeX whenever possible for this reason.
 
 ## Documentation
 
@@ -120,8 +124,6 @@ be used as
 
 The class has several options to control its behavior:
 
-- `tagged`: enable PDF/UA-2 tagging for the environments defined by the class.
-  This requires the `\DocumentMetadata` command to be used in the document.
 - `minimal`: use minimal MSCA formatting requirements (11pt fonts, 15mm margins),
   instead of the larger defaults.
 - `draftproposal`: adds helpful drafting options, such as line numbers,

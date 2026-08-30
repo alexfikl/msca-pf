@@ -1,7 +1,7 @@
 % <<< preamble
 
 \def\mscaversion{5.0}
-\def\fileversion{v\mscaversion}
+\def\fileversion{v2026.3}
 \def\filedate{2026/08/21}
 \def\clsname{msca-pf}
 
@@ -24,9 +24,11 @@
 \newif\if@minimal \@minimalfalse
 \DeclareOption{minimal}{\@minimaltrue}
 
-% enable tagging features
+% enable tagging features if \DocumentMetadata was used
 \newif\if@tagged \@taggedfalse
-\DeclareOption{tagged}{\@taggedtrue}
+\ifdefined\IfDocumentMetadataTF
+    \IfDocumentMetadataTF{\@taggedtrue}{\@taggedfalse}
+\fi
 
 % additional options passed to `scrartcl` class
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{scrartcl}}
@@ -59,18 +61,10 @@
 
 % <<< tagging
 
-% disable tagging if DocumentMetadata is not provided in the document
-\if@tagged
-    \ifdefined\DocumentMetadata\else
-        \@taggedfalse
-        \PackageWarning{msca-pf}{The 'tagged' option requires the \string\DocumentMetadata\space command to be used before \string\documentclass. Tagging is now disabled}
-    \fi
-\fi
-
 % warn about tagging before we start
 \if@tagged
     \ifluatex\else
-        \PackageWarning{erc-stg}{The 'tagged' option is not fully supported with pdfLaTeX and will not currently produce veraPDF-clean PDF/UA-2 output. Compile with LuaLaTeX (TeX Live 2025+) for tagged PDFs}
+        \PackageWarning{msca-pf}{Tagged PDF generation is not fully supported with pdfLaTeX and will not currently produce veraPDF-clean PDF/UA-2 output. Compile with LuaLaTeX (TeX Live 2025+) for tagged PDFs}
     \fi
 \fi
 
@@ -85,8 +79,8 @@
 % custom roles
 \if@tagged
     \tagpdfsetup{
-        role/new-tag = {tag=erc-stg-comment, role=Div},
-        role/new-tag = {tag=erc-stg-cvitem, role=Div},
+        role/new-tag = {tag=msca-pf-comment, role=Div},
+        role/new-tag = {tag=msca-pf-cvitem, role=Div},
     }
 \fi
 
@@ -246,7 +240,7 @@
 
 \if@draftproposal
     \newenvironment{mscaexplanation}{
-        \tagstructbegin{tag=erc-stg-comment}%
+        \tagstructbegin{tag=msca-pf-comment}%
         \begingroup
     }{
         \endgroup
@@ -317,7 +311,7 @@
 % <<< cv
 
 \newenvironment{cvitem}{
-\tagstructbegin{tag=erc-stg-cvitem}
+\tagstructbegin{tag=msca-pf-cvitem}
 \if@tagged\tagpdfsetup{table/tagging=presentation}\fi
 \noindent \begin{tabular}{@{}>{\ra}p{0.18\linewidth}>{\ra}p{0.8\linewidth}}
 }{

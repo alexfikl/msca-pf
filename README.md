@@ -61,6 +61,12 @@ always consult (and prefer) the official documentation!
 > [!NOTE]
 > Accessibility support (PDF/UA-2) is enabled automatically whenever
 > `\DocumentMetadata` is provided before `\documentclass` in the templates.
+>
+> The EU is pushing for some accesibility improvements (through the
+> [EAA](https://commission.europa.eu/strategy-and-policy/policies/justice-and-fundamental-rights/disability/european-accessibility-act-eaa_en),
+> for example), that do not directly apply to MSCA grants. However, enabling these
+> features can improve accessibility for reviewers and program officers, so it's
+> generally encouraged!
 
 By default, the current templates use the new [LaTeX
 Tagging](https://latex3.github.io/tagging-project/) infrastructure to produce

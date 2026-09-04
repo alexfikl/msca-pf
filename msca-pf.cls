@@ -258,6 +258,8 @@
 
 \NewDocumentCommand \ra {} {\raggedright\arraybackslash}
 
+\newlength{\tablewidth}
+
 \newenvironment{msctable}[1]{
 \centering
 \footnotesize
@@ -277,21 +279,22 @@
 \newenvironment{mscaorgoverview}{
 \tagstructbegin{tag=msca-pf-org-overview}
 \if@tagged\tagpdfsetup{table/tagging=true, table/header-rows={1}}\fi
+\setlength{\tablewidth}{\dimexpr\textwidth - 12\tabcolsep - 7\arrayrulewidth\relax}
 \begin{msctable}{
-    |>{\ra}p{0.165\linewidth}
-    |>{\ra}p{0.075\linewidth}
-    |>{\ra}p{0.15\linewidth}
-    |>{\ra}p{0.15\linewidth}
-    |>{\ra}p{0.15\linewidth}
-    |>{\ra}p{0.15\linewidth}|}
+    |>{\ra}p{0.15\tablewidth}
+    |>{\ra}p{0.12\tablewidth}
+    |>{\ra}p{0.25\tablewidth}
+    |>{\ra}p{0.14\tablewidth}
+    |>{\ra}p{0.15\tablewidth}
+    |>{\ra}p{0.19\tablewidth}|}
 \hline
 \rowcolor{gray!40}
-\textbf{Organisation Role} &
-\textbf{PIC} &
-\textbf{Legal Entity Short Name} &
-\textbf{Academic Organisation (Y/N)} &
-\textbf{Country} &
-\textbf{Name of Supervisor} \\\hline
+\centering\arraybackslash \textbf{Organisation Role} &
+\centering\arraybackslash \textbf{PIC} &
+\centering\arraybackslash \textbf{Legal Entity Short Name} &
+\centering\arraybackslash \textbf{Academic Organisation (Y/N)} &
+\centering\arraybackslash \textbf{Country} &
+\centering\arraybackslash \textbf{Name of Supervisor} \\\hline
 }{
 \hline
 \end{msctable}
@@ -302,9 +305,10 @@
 \newenvironment{mscaorgcapacity}{
 \tagstructbegin{tag=msca-pf-org-capacity}
 \if@tagged\tagpdfsetup{table/tagging=true, table/header-columns={1}}\fi
+\setlength{\tablewidth}{\dimexpr\textwidth - 4\tabcolsep - 3\arrayrulewidth\relax}
 \begin{msclongtable}{
-    |>{\ra}p{0.3\linewidth}
-    |>{\ra}p{0.646\linewidth}|}
+    |>{\ra}p{0.3\tablewidth}
+    |>{\ra}p{0.7\tablewidth}|}
 \hline
 }{
 \hline
@@ -319,7 +323,8 @@
 \newenvironment{cvitem}{
 \tagstructbegin{tag=msca-pf-cvitem}
 \if@tagged\tagpdfsetup{table/tagging=presentation}\fi
-\noindent \begin{tabular}{@{}>{\ra}p{0.18\linewidth}>{\ra}p{0.8\linewidth}}
+\setlength{\tablewidth}{\dimexpr\textwidth - 4\tabcolsep\relax}
+\noindent \begin{tabular}{@{}>{\ra}p{0.18\tablewidth}>{\ra}p{0.82\tablewidth}}
 }{
 \end{tabular}
 \tagstructend

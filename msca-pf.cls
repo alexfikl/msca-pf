@@ -81,6 +81,8 @@
     \tagpdfsetup{
         role/new-tag = {tag=msca-pf-comment, role=Div},
         role/new-tag = {tag=msca-pf-cvitem, role=Div},
+        role/new-tag = {tag=msca-pf-org-overview, role=Div},
+        role/new-tag = {tag=msca-pf-org-capacity, role=Div},
     }
 \fi
 
@@ -273,6 +275,7 @@
 }
 
 \newenvironment{mscaorgoverview}{
+\tagstructbegin{tag=msca-pf-org-overview}
 \if@tagged\tagpdfsetup{table/tagging=true, table/header-rows={1}}\fi
 \begin{msctable}{
     |>{\ra}p{0.165\linewidth}
@@ -292,10 +295,12 @@
 }{
 \hline
 \end{msctable}
+\tagstructend
 }
 
 % NOTE: This can contain a lot of text, so we make it long by default
 \newenvironment{mscaorgcapacity}{
+\tagstructbegin{tag=msca-pf-org-capacity}
 \if@tagged\tagpdfsetup{table/tagging=true, table/header-columns={1}}\fi
 \begin{msclongtable}{
     |>{\ra}p{0.3\linewidth}
@@ -304,6 +309,7 @@
 }{
 \hline
 \end{msclongtable}
+\tagstructend
 }
 
 % >>>

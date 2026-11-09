@@ -63,7 +63,7 @@
 
 % warn about tagging before we start
 \if@tagged
-    \ifluatex\else
+    \ifLuaTeX\else
         \PackageWarning{msca-pf}{Tagged PDF generation is not fully supported with pdfLaTeX and will not currently produce veraPDF-clean PDF/UA-2 output. Compile with LuaLaTeX (TeX Live 2025+) for tagged PDFs}
     \fi
 \fi
@@ -164,7 +164,7 @@
 }
 
 % required font is Times New Roman (or Nimbus Roman on Linux)
-\ifpdftex
+\ifPDFTeX
     \RequirePackage[T1]{fontenc}
     \RequirePackage{newtxtext}
     \RequirePackage{newtxmath}
